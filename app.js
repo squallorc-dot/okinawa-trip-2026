@@ -1,9 +1,9 @@
-import {VERSION,HOTEL,FLIGHTS,LINKS,PLACES,DAYS,ROUTES,SHOPS,PRODUCTS,PHOTO_CREDITS} from "./data.js?v=20261105-03";
-import {SCENE_PHOTOS,DAY_PHOTOS,OFFICIAL_PRODUCT_PHOTOS} from "./media.js?v=20261105-03";
+import {VERSION,HOTEL,FLIGHTS,LINKS,PLACES,DAYS,ROUTES,SHOPS,PRODUCTS,PHOTO_CREDITS} from "./data.js?v=20261105-04";
+import {SCENE_PHOTOS,DAY_PHOTOS,OFFICIAL_PRODUCT_PHOTOS} from "./media.js?v=20261105-04";
 const $ = (s)=>document.querySelector(s);
 const enc = encodeURIComponent;
 const esc = s=>String(s??"").replace(/[&<>"']/g,x=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[x]));
-const state = {view:"schedule",day:1,shopFilter:"all",shopDay:"all",shopSearch:"",routeDay:"all",opened:null};
+const state = {view:"overview",day:1,shopFilter:"all",shopDay:"all",shopSearch:"",routeDay:"all",opened:null};
 const stored = (k,f)=>{try{return localStorage.getItem("okinawa-"+k)??f;}catch{return f;}};
 const save = (k,v)=>{try{localStorage.setItem("okinawa-"+k,v);}catch{}};
 const purchased = (()=>{try{return JSON.parse(stored("products","{}"))||{};}catch{return {};}})();
@@ -14,7 +14,7 @@ const travelUrl=(from,to,mode="transit")=>"https://www.google.com/maps/dir/?api=
 const jstDate=()=>new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Tokyo",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
 const today=DAYS.find(d=>d.date===jstDate());
 const param=new URLSearchParams(location.search);
-state.view=["schedule","transport","shopping","info"].includes(param.get("view"))?param.get("view"):"schedule";
+state.view=["overview","schedule","transport","shopping","info"].includes(param.get("view"))?param.get("view"):"overview";
 state.day=Math.min(6,Math.max(1,Number(param.get("day"))||today?.n||1));
 const icons={
  calendar:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18"/>',
@@ -42,7 +42,7 @@ const icons={
  link:'<path d="M10 13a5 5 0 007.07 0l2-2a5 5 0 00-7.07-7.07l-1.2 1.2M14 11a5 5 0 00-7.07 0l-2 2a5 5 0 007.07 7.07l1.2-1.2"/>'
 };
 const icon=(n,size=20)=>'<svg class="ico" width="'+size+'" height="'+size+'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(icons[n]||icons.pin)+'</svg>';
-const navs=[["schedule","行程","calendar"],["transport","交通","bus"],["shopping","必買","bag"],["info","資訊","info"]];
+const navs=[["overview","總覽","home"],["schedule","行程","calendar"],["transport","交通","bus"],["shopping","必買","bag"],["info","資訊","info"]];
 const actionButton=(label,href,kind="primary",name="pin")=>'<a class="button '+kind+'" href="'+esc(href)+'" target="_blank" rel="noopener noreferrer">'+icon(name,16)+esc(label)+'</a>';
 const linkPlace=(id,small=false)=>{const p=PLACES[id];if(!p)return"";return '<a class="place-link" href="'+locationUrl(p)+'" target="_blank" rel="noopener noreferrer">'+icon("pin",14)+esc(p.name)+' ↗</a>';};
 const dayLabel=d=>'11/'+String(d.n).padStart(2,"0")+'（'+d.weekday+'）';
@@ -66,11 +66,24 @@ const dayHighlights={
 6:["回程優先","先確認行李配送，16:00–16:30 到機場取行李","airport"]
 };
 const dayEssentials=n=>{const [label,description,locationId]=dayHighlights[n]||[];const p=PLACES[locationId];return '<div class="day-essentials"><div class="day-essentials-mark">'+icon(n===6?"plane":n===2||n===4?"clock":n===3?"bus":"pin",23)+'</div><div><span>DAY '+n+' · '+esc(label)+'</span><strong>'+esc(description)+'</strong></div>'+(p?'<a class="essentials-action" href="'+locationUrl(p)+'" target="_blank" rel="noopener noreferrer">地點 '+icon("arrow",14)+'</a>':'')+'</div>';};
-const schedule=()=>{const d=DAYS[state.day-1];return dayHero(d)+dayTabs()+'<div class="day-header"><span class="eyebrow">DAY '+String(d.n).padStart(2,"0")+' · '+dayLabel(d)+'</span><h2>'+esc(d.title)+'</h2><p>'+esc(d.tag)+'</p><div class="meta-line"><span>'+icon("clock",15)+esc(d.kind)+'</span><span>'+icon("hotel",15)+'今晚住宿：'+(d.n===6?"回台中":esc(HOTEL.name))+'</span></div>'+(today?.n===d.n?'<span class="current-day">今天的行程</span>':'')+'</div>'+dayEssentials(d.n)+sectionTitle("YOUR DAY","今天的行程",'<a class="section-link" data-view="transport" data-route-day="'+d.n+'">查看當天交通 '+icon("arrow",15)+'</a>')+'<div class="timeline">'+d.events.map((e,i)=>timelineEntry(e,d.n,i)).join("")+'</div><div class="trip-note">'+icon("alert",19)+'<div><b>這一天的小提醒</b><p>'+esc(d.tip)+'</p></div></div>'+dayShopping(d.n)+footer();};
+const overview=()=>{
+ const d=today||DAYS[0], dayNum=d.n;
+ const checkpoints=[["JX312","11/11 17:00","台中 → 那霸"],["JX313","11/16 20:30","那霸 → 台中"]];
+ return '<section class="overview-hero"><div class="overview-photo">'+photoTag(DAY_PHOTOS[2],"沖繩古宇利島海景","overview-img")+'</div><div class="overview-head"><span class="eyebrow">OKINAWA · 2026.11.11—11.16</span><h1>沖繩，<br>慢慢走。</h1><p>六天五夜・海景、商場與兩人的旅行時光</p><div class="overview-hero-buttons"><button class="button primary-on-dark" data-day="'+dayNum+'">'+icon("calendar",17)+(today?"查看今天行程":"開始六天行程")+'</button><button class="button light-on-dark" data-view="transport">'+icon("bus",17)+'交通指南</button></div></div><span class="hero-corner">旅の記録 · OKINAWA</span></section>'+
+ '<div class="overview-intro">'+sectionTitle("TRIP AT A GLANCE","旅程一眼掌握")+'<div class="overview-quick"><div class="overview-quick-item"><span>'+icon("plane",18)+'去程航班</span><strong>11/11 JX312</strong><small>17:00 台中 → 19:30 那霸</small></div><div class="overview-quick-item"><span>'+icon("hotel",18)+'固定住宿</span><strong>東橫INN 旭橋</strong><small>11/11–11/16 · 5 晚</small></div><div class="overview-quick-item"><span>'+icon("plane",18)+'回程航班</span><strong>11/16 JX313</strong><small>20:30 那霸 → 21:20 台中</small></div></div></div>'+
+ '<div class="overview-alert"><div>'+icon("alert",20)+'</div><p><strong>出發前小提醒</strong><span>Day 2／4 請先核對 Klook 集合點；Day 3 再查 152、385 號巴士；Day 6 先確認行李配送預約。</span></p></div>'+
+ sectionTitle("THE SIX DAYS","六天旅程",'<button class="section-link" data-view="schedule">查看詳細行程 '+icon("arrow",15)+'</button>')+
+ '<div class="overview-day-grid">'+DAYS.map(day=>'<button class="overview-day-card" data-day="'+day.n+'"><span class="overview-day-image">'+photoTag(DAY_PHOTOS[day.n],day.title,"overview-day-img")+'<span class="overview-number">DAY 0'+day.n+'</span></span><span class="overview-day-body"><small>11/'+String(day.n).padStart(2,"0")+'（'+day.weekday+'） · '+esc(day.kind)+'</small><strong>'+esc(day.title)+'</strong><em>'+esc(day.tag)+'</em><span class="overview-day-more">探索當日行程 '+icon("arrow",15)+'</span></span></button>').join("")+'</div>'+
+ '<div class="overview-shortcuts">'+sectionTitle("QUICK LINKS","現場常用快捷")+'<div class="shortcut-grid"><a href="'+directionsUrl(PLACES.hotel,"transit")+'" target="_blank" rel="noopener noreferrer">'+icon("home",23)+'<span><b>返回飯店</b><small>開啟 Google Maps 導航</small></span>'+icon("arrow",16)+'</a><button data-view="transport">'+icon("bus",23)+'<span><b>交通搭乘指南</b><small>巴士・單軌・計程車</small></span>'+icon("arrow",16)+'</button><button data-view="shopping">'+icon("bag",23)+'<span><b>必買清單</b><small>商品、商場與已買狀態</small></span>'+icon("arrow",16)+'</button><button data-view="info">'+icon("info",23)+'<span><b>旅遊資訊</b><small>航班・飯店・機場</small></span>'+icon("arrow",16)+'</button></div></div>'+footer();
+};
+const schedule=()=>{
+ const d=DAYS[state.day-1];
+ return dayTabs()+dayHero(d)+'<div class="day-subheading"><span>'+icon("clock",15)+esc(d.kind)+'</span><span>'+icon("hotel",15)+(d.n===6?"回程日":"每晚住宿：旭橋站附近")+'</span></div>'+dayEssentials(d.n)+sectionTitle("THE PLAN","今天的行程",'<button class="section-link" data-view="transport" data-route-day="'+d.n+'">查看當日交通 '+icon("arrow",15)+'</button>')+'<div class="timeline">'+d.events.map((e,i)=>timelineEntry(e,d.n,i)).join("")+'</div><div class="trip-note">'+icon("alert",19)+'<div><b>今天的小提醒</b><p>'+esc(d.tip)+'</p></div></div>'+dayShopping(d.n)+footer();
+};
 const timelineEntry=(e,day,i)=>{
   const p=PLACES[e.place];const route=ROUTES.find(r=>r.id===e.route);
   const symbol=({flight:"plane",meeting:"pin",move:"bus",shop:"bag",food:"clock",critical:"alert",sight:"map",optional:"list",plan:"clock"})[e.type]||"pin";
-  const photograph=p&&(e.type==="sight"||e.type==="shop"||e.type==="meeting"||e.type==="optional"||e.type==="food")?SCENE_PHOTOS[e.place]:null;
+  const photograph=p&&(e.type==="sight"||e.type==="shop"||e.type==="optional")?SCENE_PHOTOS[e.place]:null;
   return '<article class="timeline-item"><span class="timeline-rail"><span>'+icon(symbol,17)+'</span></span><div class="event '+(photograph?'has-event-photo':'')+'">'+(photograph?'<div class="event-photo">'+photoTag(photograph,p.name,"event-image")+'<span class="photo-label">'+esc(p.name)+'</span></div>':'')+'<div class="event-body"><div class="event-top"><time>'+esc(e.t)+'</time><span class="event-kind">'+({meeting:"集合",flight:"航班",move:"移動",shop:"逛街",critical:"重要",sight:"景點",optional:"順路",food:"休息",plan:"準備"}[e.type]||"行程")+'</span></div><h3>'+esc(e.title)+'</h3><p>'+esc(e.detail)+'</p>'+(p?'<div class="event-place">'+linkPlace(e.place)+'</div>':'')+'<div class="event-actions">'+(p?actionButton("導航到這裡",directionsUrl(p,"walking"),"outline","pin"):"")+(route?'<button class="button ghost" data-route="'+route.id+'">'+icon("bus",16)+'查看這段交通</button>':'')+(p?.floors?.length?'<button class="button ghost" data-place="'+e.place+'">'+icon("bag",16)+'樓層攻略</button>':'')+'</div></div></div></article>';
 };
 const dayShopping=(day)=>{
@@ -105,7 +118,7 @@ const modalRoute=(id)=>{state.view="transport";state.routeDay="all";state.opened
 const showModal=(html)=>{const root=$("#modal-root");root.innerHTML='<div class="overlay" data-close-modal><div role="dialog" aria-modal="true" aria-label="詳細資訊" class="modal"><button class="modal-close" aria-label="關閉" data-close-modal>×</button>'+html+'</div></div>';document.body.classList.add("has-modal");};
 const closeModal=()=>{$("#modal-root").innerHTML="";document.body.classList.remove("has-modal");};
 const syncUrl=()=>{const u=new URL(location.href);u.searchParams.set("view",state.view);u.searchParams.set("day",state.day);history.replaceState(null,"",u);};
-const render=()=>{const root=$("#app");if(!root)return;root.innerHTML=header()+'<div class="shell">'+desktop()+'<main id="content" tabindex="-1">'+({schedule,transport,shopping,info}[state.view]||schedule)()+'</main></div>'+nav()+'<div id="modal-root"></div>';};
+const render=()=>{const root=$("#app");if(!root)return;root.innerHTML=header()+'<div class="shell">'+desktop()+'<main id="content" tabindex="-1">'+({overview,schedule,transport,shopping,info}[state.view]||overview)()+'</main></div>'+nav()+'<div id="modal-root"></div>';};
 const switchView=(v)=>{state.view=v;state.opened=null;render();syncUrl();scrollTo({top:0,behavior:"instant"});};
 document.addEventListener("click",async e=>{
   const modal=e.target.closest("[data-close-modal]");if(modal&&(e.target===modal||e.target.closest(".modal-close"))){closeModal();return;}
@@ -122,6 +135,6 @@ document.addEventListener("click",async e=>{
 document.addEventListener("input",e=>{if(e.target.id==="shop-search"){const pos=e.target.selectionStart;state.shopSearch=e.target.value;const cont=$(".product-grid");if(cont){const rs=PRODUCTS.filter(p=>(state.shopFilter==="all"||(purchased[p.id]||"未買")===state.shopFilter)&&(state.shopDay==="all"||p.where.includes(state.shopDay))&&((p.name+p.jp+p.brand+p.cat+p.photo).toLowerCase().includes(state.shopSearch.toLowerCase())));cont.innerHTML=rs.length?rs.map(productCard).join(""):'<div class="empty">目前沒有符合的商品。</div>';}}});
 document.addEventListener("change",e=>{if(e.target.id==="shop-day"){state.shopDay=e.target.value;const y=scrollY;render();scrollTo(0,y);}});
 document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal();});
-window.addEventListener("popstate",()=>{const p=new URLSearchParams(location.search);state.view=["schedule","transport","shopping","info"].includes(p.get("view"))?p.get("view"):"schedule";state.day=Math.max(1,Math.min(6,Number(p.get("day"))||1));render();});
+window.addEventListener("popstate",()=>{const p=new URLSearchParams(location.search);state.view=["overview","schedule","transport","shopping","info"].includes(p.get("view"))?p.get("view"):"overview";state.day=Math.max(1,Math.min(6,Number(p.get("day"))||1));render();});
 render();
 if("serviceWorker" in navigator)window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}));
