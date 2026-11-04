@@ -35,6 +35,7 @@ export const DAY_PHOTOS={
 // 這些是能對上精確包裝的品牌官方商城／正式零售商商品照，均為外部來源。
 // 無法確認尺寸或正確產品的商品保持無圖；不可回退至私人截圖，也不可用相似型號替代。
 export const OFFICIAL_PRODUCT_PHOTOS={
+  p04:"https://webshop.montbell.jp/common/images/product/prod_c/c_1133374_pu.jpg",
   p06:"https://www.kao-kirei.com/content/dam/sites/kao/www-kao-kirei-com/jp/ja/item/khg/biore/25337644/GG01.jpg",
   p11:"https://jalplaza-airport.jalux.com/files_thumbnail/co/item/CTS/la%20tale_Wcream2.jpg/500.jpg",
   p15:"https://shop.r10s.jp/kodawarinouka/cabinet/sweet/okasi/imgrc0156272300.jpg",
