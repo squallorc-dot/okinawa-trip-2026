@@ -178,7 +178,7 @@ export const SHOPS = [
 export const PRODUCTS = [
  {id:"p01",name:"DHC 鋅 60日份（60粒）",jp:"DHC 亜鉛 60日分",cat:"保健",photo:"1、2（相同照片）",where:["rycom","parco","kokusai","oroku"],priority:1,brand:"DHC",query:"DHC 亜鉛 60日分",official:"https://top.dhc.co.jp/shop/health/tempo/item/e00008/",status:"confirmed"},
  {id:"p03",name:"mont-bell 深藍色斜背包（附原圖 Kitty 掛飾）",jp:"mont-bell ショルダーバッグ（型號待核）",cat:"包包",photo:"3",where:["rycom"],priority:1,brand:"mont-bell",query:"mont-bell ショルダーバッグ ネイビー",official:"https://www.montbell.jp/",status:"variant"},
- {id:"p04",name:"mont-bell 迷你側背／小物包（多色）",jp:"mont-bell ミニショルダー／ポーチ（型號待核）",cat:"包包",photo:"4",where:["rycom"],priority:1,brand:"mont-bell",query:"mont-bell ミニショルダー ポーチ",official:"https://www.montbell.jp/",status:"variant"},
+ {id:"p04",name:"mont-bell 零錢包 Coin Purse（六色）",jp:"モンベル コインパース #1133374",cat:"包包",photo:"4",where:["rycom"],priority:1,brand:"mont-bell",query:"モンベル コインパース 1133374",official:"https://webshop.montbell.jp/goods/disp.php?product_id=1133374",status:"confirmed"},
  {id:"p05",name:"mont-bell 黑色後背包",jp:"mont-bell デイパック（型號待核）",cat:"包包",photo:"5",where:["rycom"],priority:1,brand:"mont-bell",query:"mont-bell デイパック ブラック",official:"https://www.montbell.jp/",status:"variant"},
  {id:"p06",name:"Bioré おうちdeエステ 深層泥潔顏 180g",jp:"ビオレ おうちdeエステ ディープクレイ洗顔",cat:"美妝",photo:"6",where:["rycom","parco","kokusai","oroku"],priority:2,brand:"花王 Bioré",query:"ビオレ おうちdeエステ ディープクレイ洗顔 180g",official:"https://www.kao-kirei.com/ja/item/khg/biore/4901301464057/",status:"confirmed"},
  {id:"p07",name:"曼秀雷敦 ジンマート 15g（蕁麻疹止癢乳霜）",jp:"メンソレータム ジンマート 15g",cat:"藥妝",photo:"7",where:["rycom","parco","kokusai","oroku"],priority:2,brand:"ロート製薬",query:"ロート製薬 ジンマート 15g",official:"https://jp.rohto.com/jinmart/ointment/",status:"confirmed"},
