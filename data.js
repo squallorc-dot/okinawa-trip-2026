@@ -187,16 +187,16 @@ export const PRODUCTS = [
  {id:"p09",name:"沖繩 Sea Glass 海玻璃杯與小碟／托盤",jp:"OKINAWA Sea Glass グラス・小皿",cat:"雜貨",photo:"9",where:["ryuBo","parco","iias","kokusai"],priority:2,brand:"OKINAWA Sea Glass",query:"OKINAWA Sea Glass グラス",status:"confirmed"},
  {id:"p10",name:"ORION 沖繩限定保濕面膜",jp:"ORION FACE MASK オリオン フェイスマスク",cat:"沖繩限定",photo:"10",where:["ryuBo","parco","kokusai","oroku"],priority:2,brand:"ORION",query:"オリオン フェイスマスク 沖縄",status:"confirmed"},
  {id:"p11",name:"Hokkaido 奶油起司夾心餅 Petit",jp:"Hokkaido Butter Cheese Sand Petit",cat:"食品",photo:"11",where:["ryuBo","rycom","parco","oroku"],priority:2,brand:"Hokkaido",query:"Hokkaido Butter Cheese Sand Petit",note:"原圖標示北海道食材、那霸機場國內線2樓；不是沖繩限定商品",status:"confirmed"},
- {id:"p12",name:"MUHI 麵包超人止癢貼片 76枚",jp:"ムヒパッチA 76枚 アンパンマン",cat:"藥妝",photo:"12",where:["rycom","parco","kokusai","oroku"],priority:2,brand:"池田模範堂",query:"ムヒパッチA 76枚 公式",status:"confirmed"},
+ {id:"p12",name:"MUHI 麵包超人止癢貼片 A1 76枚",jp:"ムヒパッチA1 76枚 アンパンマン",cat:"藥妝",photo:"12",where:["rycom","parco","kokusai","oroku"],priority:2,brand:"池田模範堂",query:"ムヒパッチA 76枚 公式",status:"confirmed"},
  {id:"p13",name:"Kracie 漢方葛根湯 30包裝",jp:"クラシエ漢方 葛根湯エキス顆粒 30包",cat:"藥妝",photo:"13",where:["rycom","parco","kokusai","oroku"],priority:2,brand:"クラシエ",query:"クラシエ 葛根湯 30包",status:"confirmed"},
  {id:"p14",name:"久光製藥 Butenalock Vα 抗黴菌乳霜 18g",jp:"ブテナロックVαクリーム 18g",cat:"藥妝",photo:"14",where:["rycom","parco","kokusai","oroku"],priority:2,brand:"久光製薬",query:"ブテナロックVαクリーム 18g",official:"https://www.hisamitsu.co.jp/healthcare/products/506.html",storeLink:"https://www.daikokudrug-taiwan.com/zh-TW/products/m84446045",status:"confirmed",note:"指定第2類醫藥品；用藥依藥師及產品說明"},
  {id:"p15",name:"沖繩車蝦仙貝（紅色大包）",jp:"沖縄 車えびせんべい BIG PACK",cat:"食品",photo:"15",where:["ryuBo","rycom","parco","kokusai","oroku"],priority:2,brand:"",query:"沖縄 車えびせんべい ビッグパック",status:"confirmed"},
- {id:"p16",name:"ほりにし 萬用香料（原味瓶）",jp:"アウトドアスパイス ほりにし",cat:"食品",photo:"16",where:["ryuBo","rycom","parco","kokusai"],priority:2,brand:"ほりにし",query:"アウトドアスパイス ほりにし 公式",status:"confirmed"},
- {id:"p17",name:"合利他命 EX Plus 瓶裝",jp:"アリナミンEXプラス（瓶）",cat:"保健",photo:"17",where:["rycom","parco","kokusai","oroku"],priority:2,brand:"アリナミン製薬",query:"アリナミンEXプラス 瓶",status:"confirmed"},
+ {id:"p16",name:"ほりにし 萬用香料（原味瓶）",jp:"アウトドアスパイス ほりにし",cat:"食品",photo:"16",where:["ryuBo","rycom","parco","kokusai"],priority:2,brand:"ほりにし",query:"アウトドアスパイス ほりにし 公式",official:"https://horinishi.jp/lineup/",status:"confirmed"},
+ {id:"p17",name:"合利他命 EX Plus 瓶裝",jp:"アリナミンEXプラス（瓶）",cat:"保健",photo:"17",where:["rycom","parco","kokusai","oroku"],priority:2,brand:"アリナミン製薬",query:"アリナミンEXプラス 瓶",official:"https://alinamin.jp/lineup/alinaminexplus.html",status:"confirmed"},
  {id:"p18",name:"沖繩島辣椒粉（紅蓋罐）",jp:"沖縄 島とうがらし粉",cat:"食品",photo:"18",where:["ryuBo","rycom","parco","kokusai","oroku"],priority:2,brand:"",query:"沖縄 島とうがらし粉",status:"confirmed"},
  {id:"p19",name:"ぱりん 煎餅／薄餅（藍色包裝）",jp:"ぱりん おせんべい",cat:"食品",photo:"19",where:["ryuBo","rycom","parco","kokusai"],priority:2,brand:"",query:"ぱりん 沖縄 お菓子 青い包装",status:"variant"},
  {id:"p20",name:"沖繩海蘊＋芽海帶乾燥海藻（兩包）",jp:"沖縄もずくと芽かぶ",cat:"食品",photo:"20",where:["ryuBo","rycom","parco","kokusai"],priority:2,brand:"",query:"沖縄もずくと芽かぶ 乾燥",status:"confirmed"},
- {id:"p21",name:"石垣島辣油（手工瓶裝／紙封）",jp:"石垣島ラー油",cat:"食品",photo:"21",where:["ryuBo","rycom","parco","kokusai"],priority:2,brand:"石垣島ラー油",query:"石垣島ラー油 手作り",status:"confirmed"}
+ {id:"p21",name:"石垣島辣油（手工瓶裝／紙封）",jp:"石垣島ラー油",cat:"食品",photo:"21",where:["ryuBo","rycom","parco","kokusai"],priority:2,brand:"石垣島ラー油",query:"石垣島ラー油 手作り",official:"https://penshoku.jp/?pid=148533679",status:"confirmed"}
 ];
 export const PHOTO_CREDITS = [
  {id:"aquarium",label:"美麗海水族館",file:"Big and small fish at Okinawa Churaumi Aquarium.jpg",source:"https://commons.wikimedia.org/wiki/File:Big_and_small_fish_at_Okinawa_Churaumi_Aquarium.jpg",credit:"Wikimedia Commons（請依來源檔頁授權）"},
