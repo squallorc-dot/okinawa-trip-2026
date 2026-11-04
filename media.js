@@ -35,6 +35,13 @@ export const DAY_PHOTOS={
 // 這些是能對上精確包裝的品牌官方商城／正式零售商商品照，均為外部來源。
 // 無法確認尺寸或正確產品的商品保持無圖；不可回退至私人截圖，也不可用相似型號替代。
 export const OFFICIAL_PRODUCT_PHOTOS={
+  p06:"https://www.kao-kirei.com/content/dam/sites/kao/www-kao-kirei-com/jp/ja/item/khg/biore/25337644/GG01.jpg",
+  p11:"https://jalplaza-airport.jalux.com/files_thumbnail/co/item/CTS/la%20tale_Wcream2.jpg/500.jpg",
+  p15:"https://shop.r10s.jp/kodawarinouka/cabinet/sweet/okasi/imgrc0156272300.jpg",
+  p17:"https://tshop.r10s.jp/syouwa/cabinet/iy/iy0501.jpg?fitin=720%3A720",
+  p18:"https://image1.shopserve.jp/ryukyufront.jp/pic-labo/rfo0710.jpg",
+  p19:"https://miyakojima-yukishio.com/cdn/shop/files/4529448980010_s2.png?v=1773904450&width=713",
+  p20:"https://kaihou-okinawa.com/cdn/shop/files/kaiho02_1024x.jpg?v=1711523288",
   p01:"https://greenbeans.com/images-v3/89edeb69-fe10-49ca-baab-5c51900239b9/c3c9919a-7d62-4a67-b41c-e38f1042c7c8/1280x1280.jpg",
   p08a:"https://fitter.cosme.net/media/product/10221/skuimg-d_56383_xl.jpg?size=trimIfLarge&target=500x500",
   p08b:"https://www.matsukiyococokara-online.com/store/media/catalog/product/4/5/4571509300787_01_f08d666c09654f607bd9ce50a85f8fab.jpg",
