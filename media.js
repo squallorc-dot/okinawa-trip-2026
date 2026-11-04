@@ -43,7 +43,7 @@ export const OFFICIAL_PRODUCT_PHOTOS={
   p18:"https://image1.shopserve.jp/ryukyufront.jp/pic-labo/rfo0710.jpg",
   p19:"https://miyakojima-yukishio.com/cdn/shop/files/4529448980010_s2.png?v=1773904450&width=713",
   p20:"https://kaihou-okinawa.com/cdn/shop/files/kaiho02_1024x.jpg?v=1711523288",
-  p01:"https://greenbeans.com/images-v3/89edeb69-fe10-49ca-baab-5c51900239b9/c3c9919a-7d62-4a67-b41c-e38f1042c7c8/1280x1280.jpg",
+  p01:"https://top.dhc.co.jp/shop/health/tempo/item/e00008/img/img_e8_60d.jpg",
   p08a:"https://fitter.cosme.net/media/product/10221/skuimg-d_56383_xl.jpg?size=trimIfLarge&target=500x500",
   p08b:"https://www.matsukiyococokara-online.com/store/media/catalog/product/4/5/4571509300787_01_f08d666c09654f607bd9ce50a85f8fab.jpg",
   p13:"https://ec.jal.co.jp/img/0170/goods/L/4987045069307.jpg",
