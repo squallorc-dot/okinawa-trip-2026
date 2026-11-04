@@ -1,0 +1,19 @@
+{
+  "name": "沖繩，慢慢走。｜2026 沖繩母女自由行",
+  "short_name": "沖繩旅遊手冊",
+  "description": "六天行程・交通・必買・實用資訊",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f8f4",
+  "theme_color": "#1e6673",
+  "lang": "zh-TW",
+  "icons": [
+    {
+      "src": "assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+// Okinawa Trip 2026 · version 2026.11.05-02
+const CACHE='okinawa-trip-2026.11.05-02';
+const OFFLINE=['./','./index.html','./styles.css?v=20261105-02','./app.js?v=20261105-02','./data.js?v=20261105-02','./media.js?v=20261105-02','./assets/icon.svg','./assets/og-cover.svg','./manifest.webmanifest','./refresh.html'];
+self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(OFFLINE)).then(()=>self.skipWaiting())));
+self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('okinawa-trip-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
+self.addEventListener('fetch',event=>{const req=event.request;if(req.method!=='GET'||new URL(req.url).origin!==self.location.origin)return;event.respondWith(fetch(req).then(res=>{if(res.ok){const clone=res.clone();caches.open(CACHE).then(c=>c.put(req,clone)).catch(()=>{});}return res;}).catch(()=>caches.match(req).then(r=>r||caches.match('./index.html'))));});

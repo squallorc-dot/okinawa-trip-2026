@@ -1,0 +1,43 @@
+name: Validate Okinawa travel website
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Check files and module syntax
+        run: |
+          set -eu
+          test -f index.html
+          test -f app.js
+          test -f data.js
+          test -f styles.css
+          test -f sw.js
+          test -f manifest.webmanifest
+          test -f assets/icon.svg
+          test -f assets/og-cover.svg
+          node --check app.js
+          node --check data.js
+          node --check sw.js
+          node -e "const m=require('./manifest.webmanifest'); if(!m.name||!m.icons?.length)process.exit(1)" 2>/dev/null || node -e "const fs=require('fs');const m=JSON.parse(fs.readFileSync('manifest.webmanifest'));if(!m.name||!m.icons?.length)process.exit(1)"
+      - name: Check consistent release token
+        run: |
+          node --input-type=module <<'JS'
+          import fs from 'node:fs';
+          const v=JSON.parse(fs.readFileSync('version.json','utf8')).version;
+          const tokens=v.replaceAll('.','');
+          for (const [file,str] of [['index.html',v.replaceAll('.','')],['sw.js',v],['app.js',v.replaceAll('.','')]]) {
+            const s=fs.readFileSync(file,'utf8');
+            if(!s.includes(str))throw new Error(file+' missing version '+str);
+          }
+          for (const s of ['./','./index.html','./app.js','./data.js','./styles.css','./assets/icon.svg','./assets/og-cover.svg','./manifest.webmanifest','./refresh.html']) {
+            if (!fs.existsSync(s)) throw new Error('Missing offline resource: '+s);
+          }
+          console.log('Version and offline files verified',v);
+          JS
