@@ -42,7 +42,9 @@ export const OFFICIAL_PRODUCT_PHOTOS={
   p14:"https://mrmax.jp/static_files/product_images/4987188188279_01.jpg",
   p16:"https://muranokajiya.itembox.design/product/014/000000001410/000000001410-01-l.jpg?t=20260227163524",
   p07:"https://rakuraku-jp.com/cdn/shop/files/0-1-4987241139217_a66ad218-76cf-46fc-a862-98f30b463125.jpg?v=1744080105&width=1080",
-  p12:"https://shop.r10s.jp/kyorindo/cabinet/item11/4987426300227.jpg"
+  p12:"https://shop.r10s.jp/kyorindo/cabinet/item11/4987426300227.jpg",
+  p10:"https://shop.r10s.jp/lokahi-oki/cabinet/product/cosmetics/orionfacemask_top.jpg",
+  p21:"https://image.rakuten.co.jp/shinei-okinawa/cabinet/1bn403.jpg"
 };
 export const IMAGE_AUDIT=[
  ["Day 1","Kokusaidori at night.jpg","Wikimedia Commons | Alexander Synaptic | CC BY-SA 2.0"],
