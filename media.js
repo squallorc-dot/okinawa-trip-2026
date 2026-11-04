@@ -11,6 +11,7 @@ export const SCENE_PHOTOS={
   parco:commons("SAN-A URASOE WEST COAST PARCO CITY.jpg"),
   chinen:commons("Chinen-Misaki-Park.jpg"),
   fishMarket:commons("Osakana Center, Itoman.JPG"),
+  senaga:commons("Umikaji Terrace Senagajima.jpg"),
   mibaru:commons("南城市新原ビーチの西端 - panoramio.jpg"),
   okinawaWorld:commons("Gyokusendo-1.jpg"),
   outlet:commons("Okinawa Outlet Mall Ashibinaa01n4500.jpg"),
