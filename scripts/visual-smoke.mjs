@@ -24,6 +24,13 @@ for(const width of widths){
     utilityShown:!!document.querySelector(".utility-rail")?.getBoundingClientRect().width,
     failedImages:[...document.images].filter(i=>i.complete && i.naturalWidth===0).length
   }));
+  if(view==='schedule'){
+    const labels=await page.locator('.day-tabs button strong').allTextContents();
+    const expected=['11/11','11/12','11/13','11/14','11/15','11/16'];
+    if(JSON.stringify(labels)!==JSON.stringify(expected)){
+      errors.push('Wrong day labels: '+JSON.stringify(labels));
+    }
+  }
   const overflow=metrics.scrollWidth>metrics.innerWidth+2;
   const empty=metrics.visible<180;
   const desktopSidebarScroll=width>900 && ["scroll","auto"].includes(metrics.sidebarOverflow);
