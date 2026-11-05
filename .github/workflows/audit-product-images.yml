@@ -1,0 +1,28 @@
+name: Check official product image availability
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/audit-product-images.py
+      - .github/workflows/audit-product-images.yml
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install image inspection dependencies
+        run: python -m pip install --disable-pip-version-check requests pillow
+      - name: Check image URLs and the remaining navy Montbell candidate
+        run: python scripts/audit-product-images.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: okinawa-product-image-url-audit
+          path: artifacts/product-image-audit.json
+          retention-days: 14
