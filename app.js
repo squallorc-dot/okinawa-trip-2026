@@ -1,5 +1,5 @@
-import {VERSION,HOTEL,FLIGHTS,LINKS,PLACES,DAYS,ROUTES,SHOPS,PRODUCTS,PHOTO_CREDITS} from "./data.js?v=20261105-10";
-import {SCENE_PHOTOS,DAY_PHOTOS,OFFICIAL_PRODUCT_PHOTOS} from "./media.js?v=20261105-10";
+import {VERSION,HOTEL,FLIGHTS,LINKS,PLACES,DAYS,ROUTES,SHOPS,PRODUCTS,PHOTO_CREDITS} from "./data.js?v=20261105-11";
+import {SCENE_PHOTOS,DAY_PHOTOS,OFFICIAL_PRODUCT_PHOTOS} from "./media.js?v=20261105-11";
 const $ = (s)=>document.querySelector(s);
 const enc = encodeURIComponent;
 const esc = s=>String(s??"").replace(/[&<>"']/g,x=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[x]));
@@ -134,7 +134,7 @@ document.addEventListener("click",async e=>{
   const route=e.target.closest("[data-route]");if(route){modalRoute(route.dataset.route);return;}
   const place=e.target.closest("[data-place]");if(place){modalPlace(place.dataset.place);return;}
   const copy=e.target.closest("[data-copy]");if(copy){try{await navigator.clipboard.writeText(copy.dataset.copy);copy.classList.add("copied");copy.textContent="已複製地址";}catch{showModal("<h2>飯店日文地址</h2><p>"+esc(copy.dataset.copy).replace(/\n/g,"<br>")+"</p>");}return;}
-  const share=e.target.closest("[data-share]");if(share){try{if(navigator.share)await navigator.share({title:"沖繩，慢慢走。",url:location.href});else{await navigator.clipboard.writeText(location.href);share.title="已複製分享網址";}}catch{}}
+  const share=e.target.closest("[data-share]");if(share){try{const url=new URL(location.href);url.searchParams.set("share","okinawa-og-v2");const shareUrl=url.toString();if(navigator.share)await navigator.share({title:"沖繩，慢慢走。｜2026 沖繩之旅",url:shareUrl});else{await navigator.clipboard.writeText(shareUrl);share.title="已複製新版分享網址";}}catch{}}
 });
 document.addEventListener("input",e=>{if(e.target.id==="shop-search"){const pos=e.target.selectionStart;state.shopSearch=e.target.value;const cont=$(".product-grid");if(cont){const rs=PRODUCTS.filter(p=>(state.shopFilter==="all"||(purchased[p.id]||"未買")===state.shopFilter)&&(state.shopDay==="all"||p.where.includes(state.shopDay))&&((p.name+p.jp+p.brand+p.cat+p.photo).toLowerCase().includes(state.shopSearch.toLowerCase())));cont.innerHTML=rs.length?rs.map(productCard).join(""):'<div class="empty">目前沒有符合的商品。</div>';}}});
 document.addEventListener("change",e=>{if(e.target.id==="shop-day"){state.shopDay=e.target.value;const y=scrollY;render();scrollTo(0,y);}});
