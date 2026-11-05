@@ -2,35 +2,35 @@
 // 正式封面僅採實際地點的橫式實景；使用者原始商品參考截圖不得上傳本站。
 const commons = file=>"https://commons.wikimedia.org/wiki/Special:FilePath/"+encodeURIComponent(file)+"?width=960";
 export const SCENE_PHOTOS={
-  hotel:commons("Toyoko Inn Naha Asahibashi Ekimae.JPG"),
-  manzamo:commons("Manzamo.jpg"),
-  kouri:commons("Kouri Bridge 202006.jpg"),
-  churaumi:commons("Churaumi Aquarium main tank 'Kuroshio Sea'.jpg"),
-  american:commons("American Village in Okinawa.jpg"),
-  rycom:commons("AEON Mall Okinawa Rycom 01.JPG"),
-  parco:commons("SAN-A URASOE WEST COAST PARCO CITY.jpg"),
-  chinen:commons("Chinen-Misaki-Park.jpg"),
-  fishMarket:commons("Osakana Center, Itoman.JPG"),
-  senaga:commons("Umikaji Terrace Senagajima.jpg"),
-  mibaru:commons("南城市新原ビーチの西端 - panoramio.jpg"),
+  hotel:"./assets/photos/toyoko-inn-naha-asahibashi-ekimae-jpg.webp",
+  manzamo:"./assets/photos/manzamo-jpg.webp",
+  kouri:"./assets/photos/kouri-bridge-202006-jpg.webp",
+  churaumi:"./assets/photos/churaumi-aquarium-main-tank-kuroshio-sea-jpg.webp",
+  american:"./assets/photos/american-village-in-okinawa-jpg.webp",
+  rycom:"./assets/photos/aeon-mall-okinawa-rycom-01-jpg.webp",
+  parco:"./assets/photos/san-a-urasoe-west-coast-parco-city-jpg.webp",
+  chinen:"./assets/photos/chinen-misaki-park-jpg.webp",
+  fishMarket:"./assets/photos/osakana-center-itoman-jpg.webp",
+  senaga:"./assets/photos/umikaji-terrace-senagajima-jpg.webp",
+  mibaru:"./assets/photos/panoramio-jpg.webp",
   okinawaWorld:commons("Gyokusendo-1.jpg"),
-  outlet:commons("Okinawa Outlet Mall Ashibinaa01n4500.jpg"),
-  iias:commons("Iias Okinawa Toyosaki 202006.jpg"),
-  ryuBo:commons("Palette Kumoji 02.jpg"),
-  mainPlace:commons("San-A Naha Main Place 20250505161500.jpg"),
-  kokusai:commons("Kokusai Dori 01.JPG"),
-  makishi:commons("Kokusai Dori 01.JPG"),
-  naminoue:commons("Naminoue-Shrine-mainhall.JPG"),
-  omoromachi:commons("Omoromachi.JPG")
+  outlet:"./assets/photos/okinawa-outlet-mall-ashibinaa01n4500-jpg.webp",
+  iias:"./assets/photos/iias-okinawa-toyosaki-202006-jpg.webp",
+  ryuBo:"./assets/photos/palette-kumoji-02-jpg.webp",
+  mainPlace:"./assets/photos/san-a-naha-main-place-20250505161500-jpg.webp",
+  kokusai:"./assets/photos/kokusai-dori-01-jpg.webp",
+  makishi:"./assets/photos/kokusai-dori-01-jpg.webp",
+  naminoue:"./assets/photos/naminoue-shrine-mainhall-jpg.webp",
+  omoromachi:"./assets/photos/omoromachi-jpg.webp"
 };
 // Day1 夜晚那霸 / Day2 古宇利大橋 / Day3 PARCO海岸購物 / Day4 知念岬 / Day5 國際通 / Day6 波上宮
 export const DAY_PHOTOS={
-  1:commons("Kokusaidori at night.jpg"),
-  2:commons("Kouri Bridge 202006.jpg"),
-  3:commons("SAN-A URASOE WEST COAST PARCO CITY.jpg"),
-  4:commons("Chinen-Misaki-Park.jpg"),
-  5:commons("Kokusai Dori 01.JPG"),
-  6:commons("Naminoue-Shrine-mainhall.JPG")
+  1:"./assets/photos/kokusaidori-at-night-jpg.webp",
+  2:"./assets/photos/kouri-bridge-202006-jpg.webp",
+  3:"./assets/photos/san-a-urasoe-west-coast-parco-city-jpg.webp",
+  4:"./assets/photos/chinen-misaki-park-jpg.webp",
+  5:"./assets/photos/kokusai-dori-01-jpg.webp",
+  6:"./assets/photos/naminoue-shrine-mainhall-jpg.webp"
 };
 // 這些是能對上精確包裝的品牌官方商城／正式零售商商品照，均為外部來源。
 // 無法確認尺寸或正確產品的商品保持無圖；不可回退至私人截圖，也不可用相似型號替代。
