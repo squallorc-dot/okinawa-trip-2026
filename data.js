@@ -1,6 +1,6 @@
-// 沖繩母女自由行｜資料底稿 2026-11-05
+// 2026 沖繩之旅｜資料底稿 2026-11-05
 // 旅行者在網頁看到的「建議／待確認」不代表已取得訂單或即時班次。
-export const VERSION = "2026.11.05-09";
+export const VERSION = "2026.11.05-10";
 export const HOTEL = {
   name:"東橫INN 沖繩那霸旭橋站前", jp:"東横INN沖縄那覇旭橋駅前",
   address:"〒900-0033 沖縄県那覇市久米2-1-20", tel:"098-951-1045",
@@ -109,7 +109,7 @@ export const DAYS = [
  ],tip:"最需要事先確認的日子：來客夢上車月台、PARCO 回程候車點與末班車。"},
  {n:4,date:"2026-11-14",weekday:"六",title:"南部風景・海邊購物",tag:"知念岬、玉泉洞與瀨長島",kind:"Klook 一日遊",cover:"ocean",events:[
   {t:"06:30–07:20",title:"早餐與準備",place:"hotel",detail:"07:50 集合，出發前先看縣民廣場導航。",type:"food"},
-  {t:"07:50 集合",title:"縣民廣場",place:"kenmin",route:"hotel-kenmin",detail:"依太太原訂 Klook 南部行程；實際集合範圍以訂單指定照片為準。",type:"meeting"},
+  {t:"07:50 集合",title:"縣民廣場",place:"kenmin",route:"hotel-kenmin",detail:"依原訂 Klook 南部行程；實際集合範圍以訂單指定照片為準。",type:"meeting"},
   {t:"跟團",title:"知念岬公園",place:"chinen",detail:"綠地與海岸線景觀。",type:"sight"},
   {t:"跟團",title:"新原海灘",place:"mibaru",detail:"南部海灘散策，活動內容以團型為準。",type:"sight"},
   {t:"跟團",title:"文化王國・玉泉洞",place:"okinawaWorld",detail:"鐘乳石洞與沖繩文化體驗。",type:"sight"},
