@@ -266,12 +266,21 @@
       ],
       "modification": "Resized and converted to WebP for use on a travel guide",
       "file_bytes": 238112
+    },
+    {
+      "image": "gyokusendo-cave-panoramio-jpg.webp",
+      "subject": "Gyokusendo Cave - panoramio.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Gyokusendo_Cave_-_panoramio.jpg",
+      "author": "FoxyStranger Kawasaki",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "original_dimensions": [
+        1280,
+        848
+      ],
+      "modification": "Resized and converted to WebP for use on a travel guide",
+      "file_bytes": 309000
     }
   ],
-  "skipped": [
-    {
-      "file": "Gyokusendo-1.jpg",
-      "reason": "Image too small for destination"
-    }
-  ]
+  "skipped": []
 }

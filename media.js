@@ -13,7 +13,7 @@ export const SCENE_PHOTOS={
   fishMarket:"./assets/photos/osakana-center-itoman-jpg.webp",
   senaga:"./assets/photos/umikaji-terrace-senagajima-jpg.webp",
   mibaru:"./assets/photos/panoramio-jpg.webp",
-  okinawaWorld:commons("Gyokusendo Cave - panoramio.jpg"),
+  okinawaWorld:"./assets/photos/gyokusendo-cave-panoramio-jpg.webp",
   outlet:"./assets/photos/okinawa-outlet-mall-ashibinaa01n4500-jpg.webp",
   iias:"./assets/photos/iias-okinawa-toyosaki-202006-jpg.webp",
   ryuBo:"./assets/photos/palette-kumoji-02-jpg.webp",
