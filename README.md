@@ -1,4 +1,4 @@
-# 沖繩，慢慢走。｜2026 沖繩母女自由行
+# 沖繩，慢慢走。｜2026 沖繩之旅
 
 網站：https://squallorc-dot.github.io/okinawa-trip-2026/
 
