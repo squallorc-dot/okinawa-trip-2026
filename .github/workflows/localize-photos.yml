@@ -1,0 +1,54 @@
+name: Localize openly licensed Okinawa scene photos
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/localize-photos.py
+      - .github/workflows/localize-photos.yml
+permissions:
+  contents: write
+concurrency:
+  group: okinawa-local-photos
+  cancel-in-progress: false
+jobs:
+  localize:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install photo tools
+        run: python -m pip install --disable-pip-version-check pillow requests
+      - name: Verify licenses and convert eligible photos to WebP
+        run: python scripts/localize-photos.py
+      - name: Validate output and JavaScript
+        run: |
+          test -f assets/photos/credits.json
+          test "$(find assets/photos -name '*.webp' | wc -l)" -ge 3
+          node --check media.js
+          node --check app.js
+          node --check data.js
+          node --check sw.js
+          python - <<'PY'
+          from PIL import Image
+          from pathlib import Path
+          for file in Path('assets/photos').glob('*.webp'):
+              with Image.open(file) as im:
+                  im.verify()
+          print('Verified localized images:', len(list(Path('assets/photos').glob('*.webp'))))
+          PY
+      - name: Commit licensed photo assets
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/photos media.js sw.js data.js app.js index.html version.json
+          if git diff --cached --quiet; then
+            echo "No photo changes"
+          else
+            git commit -m "assets: keep licensed Okinawa scenery in local offline WebP collection"
+            git push origin HEAD:main
+          fi
