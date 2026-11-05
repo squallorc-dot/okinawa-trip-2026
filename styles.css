@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap");
 :root{--bg:#f7f9f7;--paper:#fff;--ink:#173b45;--muted:#5e747c;--border:#dbe8e4;--ocean:#176d7b;--ocean-deep:#0b4c5b;--seafoam:#e7f3ee;--sand:#fbf1e4;--warm:#b87a56;--shadow:0 10px 32px rgba(15,75,85,.075);--rounded:18px}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:86px}body{margin:0;background:linear-gradient(140deg,#f9faf8,#f2f8f6 48%,#fbfaf6);color:var(--ink);font:400 16px/1.68 "Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif;-webkit-font-smoothing:antialiased}button,input,select,textarea{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}a:hover{color:var(--ocean)}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #e9a15f;outline-offset:3px}img{max-width:100%;display:block}.ico{display:inline-block;vertical-align:middle;flex-shrink:0}svg{overflow:visible}p{margin:0 0 12px}.eyebrow{display:block;color:var(--ocean);font-size:11px;letter-spacing:.16em;font-weight:800;text-transform:uppercase}.jp{color:var(--muted);font-size:12px}.muted{color:var(--muted);font-size:13px}
 .topbar{height:72px;position:sticky;top:0;z-index:35;padding:0 clamp(16px,3vw,46px);background:rgba(255,255,255,.97);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:14px;backdrop-filter:blur(15px)}.identity{display:flex;gap:11px;align-items:center;min-width:0}.identity .mark{width:39px;height:39px;border-radius:12px;flex-shrink:0;display:grid;place-items:center;background:var(--ocean);color:#fff;font-size:21px;font-weight:800}.identity b{font-size:17px;letter-spacing:-.03em;white-space:nowrap}.identity small{display:block;font-size:9px;letter-spacing:.12em;color:var(--muted)}.header-actions{display:flex;align-items:center;gap:15px}.top-date{color:var(--ocean);font-weight:700;letter-spacing:.12em;font-size:12px;white-space:nowrap}.top-date span{margin:0 5px;color:#b0c3bd}.icon-button{width:40px;height:40px;display:grid;place-items:center;background:white;border:1px solid var(--border);border-radius:11px;color:var(--ink)}.icon-button:hover{background:var(--seafoam)}.shell{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:232px minmax(0,1fr);gap:30px;padding:28px clamp(18px,4vw,58px) 60px}.side{position:sticky;top:96px;align-self:start;border:1px solid var(--border);border-radius:21px;background:white;padding:23px 17px;max-height:calc(100dvh - 112px);overflow-y:auto;box-shadow:var(--shadow)}.side-kicker{color:var(--ocean);font-weight:800;letter-spacing:.18em;font-size:10px}.side h2{font-size:31px;line-height:1.28;margin:8px 0 6px;letter-spacing:-.055em}.side>p{color:var(--muted);font-size:12px;margin-bottom:17px}.side h3{font-size:11px;letter-spacing:.12em;color:var(--muted);margin:24px 10px 9px}.side-nav,.side-days{display:grid;gap:4px}.side button{display:flex;align-items:center;gap:12px;border:0;background:none;color:var(--ink);width:100%;padding:11px;border-radius:11px;text-align:left;font-size:14px;font-weight:700;min-height:42px}.side button:hover,.side button.active{background:var(--seafoam);color:var(--ocean)}.side-days button{padding:9px;gap:7px}.side-days button .daynum{font-weight:800;color:var(--ocean);width:25px;flex:none}.side-days button span:last-child{min-width:0}.side-days button b{display:block;font-size:12px}.side-days button small{display:block;font-weight:400;color:var(--muted);font-size:11px;line-height:1.4}.side>small{display:block;color:#8b9d9a;margin:20px 5px 3px;font-size:11px}main{min-width:0;max-width:1000px;width:100%}.bottom-nav{display:none}
@@ -83,4 +83,39 @@
 @media (min-width:1560px) and (min-height:980px){
  .utility-rail{position:sticky;top:95px}
  .side{position:sticky;top:95px}
+}
+
+
+/* Desktop typography 2026-11-05: faithful to Tokyo December's Inter + Noto Sans TC reading scale. */
+@media screen and (min-width:901px){
+ :root{--read-scale:1.10}
+ body{font-family:Inter,"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,-apple-system,sans-serif;font-synthesis:none;line-height:1.7}
+ .side-nav button{font-size:calc(15px * var(--read-scale))}
+ .side-days button b{font-size:calc(14px * var(--read-scale));line-height:1.5}
+ .side-days button small{font-size:calc(12px * var(--read-scale));line-height:1.65}
+ .side>p,.side>small{font-size:calc(12px * var(--read-scale))}
+ .section-title h2{font-size:calc(23px * var(--read-scale))}
+ .page-heading h1{font-size:clamp(29px,2.25vw,40px)}
+ .page-heading p,.overview-alert span,.route-head p,.event p{font-size:calc(14px * var(--read-scale));line-height:1.82}
+ .event h3{font-size:calc(18px * var(--read-scale));line-height:1.55}
+ .event-top time,.route-head small,.event-kind{font-size:calc(12px * var(--read-scale))}
+ .event-place .place-link{font-size:calc(13px * var(--read-scale))}
+ .event-actions .button,.route-actions .button{font-size:calc(12px * var(--read-scale));min-height:40px}
+ .overview-day-body strong{font-size:calc(18px * var(--read-scale));line-height:1.5}
+ .overview-day-body em,.overview-day-body>small{font-size:calc(12px * var(--read-scale));line-height:1.6}
+ .overview-quick-item>small,.overview-quick-item>span{font-size:calc(12px * var(--read-scale))}
+ .overview-quick-item>strong{font-size:calc(16px * var(--read-scale))}
+ .mini-shop-inner h3,.product-card h3{font-size:calc(15px * var(--read-scale));line-height:1.55}
+ .mini-shop-inner p,.product-locations,.product-card .jp{font-size:calc(12px * var(--read-scale));line-height:1.75}
+ .product-links a,.product-state button{font-size:calc(11px * var(--read-scale))}
+ .route-card li,.route-note,.station-pair{font-size:calc(13px * var(--read-scale));line-height:1.8}
+ .utility-card>strong,.utility-card>button b{font-size:calc(13px * var(--read-scale))}
+ .utility-card>button small,.utility-card>small,.utility-line small{font-size:calc(11px * var(--read-scale))}
+}
+@media screen and (min-width:1200px){:root{--read-scale:1.14}}
+@media screen and (min-width:901px) and (max-width:1050px){
+ :root{--read-scale:1.06}
+ .side-nav button{font-size:14px}
+ .event.has-event-photo{grid-template-columns:125px minmax(0,1fr)}
+ .event-body{padding:13px}
 }
