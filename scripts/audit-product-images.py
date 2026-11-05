@@ -11,6 +11,8 @@ section=js.split("export const OFFICIAL_PRODUCT_PHOTOS=",1)[1].split("export con
 links={k:u for k,u in re.findall(r'(\w+)\s*:\s*"(https?://[^"]+)"',section)}
 links["p03-NV-candidate"]="https://webshop.montbell.jp/common/images/product/prod_k/k_1133394_nv.jpg"
 links["p03-NV-alt"]="https://webshop.montbell.jp/common/images/product/prod_c/c_1133394_nv.jpg"
+links["p11-alternative"]="https://img06.weeecdn.com/item/image/631/201/60BF61413FF2965A.jpeg"
+links["p08b-alternative"]="https://buymejapan.com/cdn/shop/files/IMG-1870.heic?format=jpg&width=700"
 
 def probe(item):
     key,url=item
