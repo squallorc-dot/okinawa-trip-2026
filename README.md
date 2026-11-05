@@ -22,3 +22,10 @@
 GitHub Pages：Settings → Pages → Deploy from branch → main /(root)。
 
 若手機仍顯示舊版，使用 https://squallorc-dot.github.io/okinawa-trip-2026/refresh.html 重新整理。
+
+## 圖片效能與儲存（2026-11-05）
+- 已將授權可重新使用的沖繩景點與商場照片存放於 `assets/photos/*.webp`；原圖授權與作者紀錄見 `assets/photos/credits.json`。
+- 品牌商品照片仍連結經查核的官方／正式商品零售圖片來源；若無公開再利用許可，**不**直接複製到公開 Repository。
+- Service Worker 在旅客瀏覽過商品照後，會把該圖片快取於使用者自己的瀏覽器；已瀏覽過的商品照片在離線環境可能繼續顯示，但首次載入仍需網路。
+- 嚴禁將使用者提供的原始購物辨識截圖重新上傳或復原到公開網站。
+- 桌機字體依東京 12 月版參照 `Inter` + `Noto Sans TC`，桌機閱讀比例約 1.10–1.14；手機版沿用原排版。
