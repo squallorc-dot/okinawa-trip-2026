@@ -35,6 +35,7 @@ export const DAY_PHOTOS={
 // 這些是能對上精確包裝的品牌官方商城／正式零售商商品照，均為外部來源。
 // 無法確認尺寸或正確產品的商品保持無圖；不可回退至私人截圖，也不可用相似型號替代。
 export const OFFICIAL_PRODUCT_PHOTOS={
+  p03:"https://webshop.montbell.jp/common/images/product/prod_k/k_1133394_nv.jpg",
   p05:"https://webshop.montbell.jp/common/images/product/prod_k/k_1133473_bk.jpg",
   p09:"https://www.okinawastory.jp/files/contents/000/000/997/block_6MfQ13y8_e15eaca58c6bec45a9642ff3135ddad08316d0ae-w1500.jpg",
   p04:"https://webshop.montbell.jp/common/images/product/prod_c/c_1133374_pu.jpg",
