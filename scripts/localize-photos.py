@@ -24,10 +24,10 @@ SESSION=requests.Session()
 SESSION.headers.update({"User-Agent":"OkinawaTrip2026TravelGuide/1.2 (attribution: https://github.com/squallorc-dot/okinawa-trip-2026)","Accept":"application/json,image/avif,image/webp,image/jpeg,image/png,image/*;q=0.8"})
 API="https://commons.wikimedia.org/w/api.php"
 ALLOWED=("cc0","public domain","cc by","cc-by","pd-old","pd-self","pd-author")
-VERSION_OLD="2026.11.05-06"
-VERSION_NEW="2026.11.05-07"
-CACHE_OLD="20261105-06"
-CACHE_NEW="20261105-07"
+VERSION_OLD="2026.11.05-07"
+VERSION_NEW="2026.11.05-08"
+CACHE_OLD="20261105-07"
+CACHE_NEW="20261105-08"
 
 def get(url,*,params=None):
     last=None
@@ -79,7 +79,7 @@ def parse_photos(js):
 def build():
     raw=MEDIA.read_text("utf8")
     items=parse_photos(raw)
-    if len(items)<10:raise RuntimeError("Source list unexpectedly short; no changes made")
+    if len(items)<1:raise RuntimeError("No unlocalized scene photo entries remain")
     successes={}
     errors=[]
     credits=[]
@@ -112,14 +112,18 @@ def build():
         except Exception as err:
             errors.append({"file":filename,"reason":str(err)[:320]})
             print("SKIPPED",filename,str(err)[:220],flush=True)
-    if len(successes)<3:
-        raise RuntimeError("Fewer than 3 eligible scenes localized; aborting without changing files")
+    if len(successes)<1:
+        raise RuntimeError("No eligible scene localized; aborting without changing files")
     PHOTO_DIR.mkdir(parents=True,exist_ok=True)
     for image_name,webp in successes.values():
         (PHOTO_DIR/image_name).write_bytes(webp)
+    credit_path=PHOTO_DIR/"credits.json"
+    previous=json.loads(credit_path.read_text("utf8")) if credit_path.exists() else {}
+    known={row["image"]:row for row in previous.get("photos",[])}
+    for row in credits:known[row["image"]]=row
     (PHOTO_DIR/"credits.json").write_text(json.dumps({
         "purpose":"Open-licensed scenes; brand product photos and traveler reference images are intentionally excluded",
-        "photos":credits,"skipped":errors
+        "photos":list(known.values()),"skipped":errors
     },ensure_ascii=False,indent=2)+"\n","utf8")
     updated=raw
     for kind,key,filename in items:
