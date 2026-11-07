@@ -1,5 +1,12 @@
 # 沖繩，慢慢走。｜2026 沖繩之旅
 
+## 2026/11/07 個人 GA4 追蹤
+
+- 沖繩網站識別 `okinawa_2026`，共用個人 GTM `GTM-5MK7X2XK`，以 `travel-tracking.js` 送匿名旅遊互動事件。
+- 只在正式 GitHub Pages 網域載入 GTM，開發或離線不會上傳正式資料；支援 `?analytics=off`。
+- 日期、功能、導航、分享與購物清單狀態追蹤，不傳送購物項目文字或個人資訊。
+
+
 網站：https://squallorc-dot.github.io/okinawa-trip-2026/
 
 ## 五個分頁
