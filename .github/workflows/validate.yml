@@ -19,6 +19,8 @@ jobs:
           test -f data.js
           test -f styles.css
           test -f sw.js
+          test -f travel-tracking.js
+          node --check travel-tracking.js
           test -f manifest.webmanifest
           test -f assets/icon.svg
           test -f assets/og-cover.svg
@@ -39,5 +41,8 @@ jobs:
           for (const s of ['./','./index.html','./app.js','./data.js','./styles.css','./assets/icon.svg','./assets/og-cover.svg','./manifest.webmanifest','./refresh.html']) {
             if (!fs.existsSync(s)) throw new Error('Missing offline resource: '+s);
           }
-          console.log('Version and offline files verified',v);
+          const html=fs.readFileSync('index.html','utf8'),sw=fs.readFileSync('sw.js','utf8');
+          if(!html.includes('data-trip-id="okinawa_2026"')||!html.includes('data-gtm-id="GTM-5MK7X2XK"'))throw new Error('GTM tracking configuration missing');
+          if(!sw.includes("'./travel-tracking.js'"))throw new Error('Analytics offline file is missing');
+          console.log('Version, tracking and offline files verified',v);
           JS
