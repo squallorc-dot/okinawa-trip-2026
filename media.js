@@ -55,7 +55,14 @@ export const OFFICIAL_PRODUCT_PHOTOS={
   p07:"https://rakuraku-jp.com/cdn/shop/files/0-1-4987241139217_a66ad218-76cf-46fc-a862-98f30b463125.jpg?v=1744080105&width=1080",
   p12:"https://shop.r10s.jp/kyorindo/cabinet/item11/4987426300227.jpg",
   p10:"https://shop.r10s.jp/lokahi-oki/cabinet/product/cosmetics/orionfacemask_top.jpg",
-  p21:"https://image.rakuten.co.jp/shinei-okinawa/cabinet/1bn403.jpg"
+  p21:"https://image.rakuten.co.jp/shinei-okinawa/cabinet/1bn403.jpg",
+  // 11/10 新增：同款官方／正式零售來源，私人購物參考照片不公開
+  p22:"https://www.fujicco.co.jp/products/upload/38.png",
+  p23:"https://netsuper.r10s.jp/item/seiyu/90/4901159304390.jpg",
+  p24:"https://kao-h.assetsadobe3.com/is/image/content/dam/sites/kao/www-kao-kirei-com/jp/ja/item/khg/atrix/25503423/GG01.jpg",
+  p25:"https://shop.r10s.jp/sundrug/cabinet/202410_4/4580723060384.jpg",
+  p26:"https://horinishi.jp/wp/wp-content/uploads/2026/03/b72f5aba-c5b0-4392-b039-04918090e829-500x500.jpg",
+  p27:"https://shop.himeyuri.co.jp/html/upload/save_image/0306113129_69aa3c818360a.jpg"
 };
 export const IMAGE_AUDIT=[
  ["Day 1","Kokusaidori at night.jpg","Wikimedia Commons | Alexander Synaptic | CC BY-SA 2.0"],
