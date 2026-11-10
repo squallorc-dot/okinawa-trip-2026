@@ -1,6 +1,6 @@
 // 2026 沖繩之旅｜資料底稿 2026-11-05
 // 旅行者在網頁看到的「建議／待確認」不代表已取得訂單或即時班次。
-export const VERSION = "2026.11.07-12";
+export const VERSION = "2026.11.10-13";
 export const HOTEL = {
   name:"東橫INN 沖繩那霸旭橋站前", jp:"東横INN沖縄那覇旭橋駅前",
   address:"〒900-0033 沖縄県那覇市久米2-1-20", tel:"098-951-1045",
@@ -186,7 +186,7 @@ export const PRODUCTS = [
  {id:"p08b",name:"ululis Kirameki 紫色瓶光澤髮油 100mL",jp:"ウルリス キラメキ ウォーターコンク シャイニー ヘアオイル",cat:"美妝",photo:"8（右）",where:["rycom","parco","kokusai","oroku"],priority:2,brand:"ululis",query:"ululis kirameki シャイニー ヘアオイル",official:"https://ululis.jp/kirameki/",status:"confirmed"},
  {id:"p09",name:"atelierplage 沖繩海玻璃杯（原圖三色）",jp:"atelierplage 海グラス OKINAWA LOGO（色別あり）",cat:"雜貨",photo:"9",where:["ryuBo","parco","iias","kokusai"],priority:2,brand:"atelierplage",query:"atelierplage 海グラス OKINAWA LOGO",official:"https://atelierplageumiglass.stores.jp/",status:"confirmed",note:"原圖含 CLEAR Sea、keramaBLUE、Coral GREEN 及小碟／托盤；網站示意圖是同品牌海玻璃系列"},
  {id:"p10",name:"ORION 沖繩限定保濕面膜",jp:"ORION FACE MASK オリオン フェイスマスク",cat:"沖繩限定",photo:"10",where:["ryuBo","parco","kokusai","oroku"],priority:2,brand:"ORION",query:"オリオン フェイスマスク 沖縄",status:"confirmed"},
- {id:"p11",name:"FERME LA TERRE 美瑛奶油起司夾心餅 Petit",jp:"バターチーズサンド プチ〈ダブルクリーム〉",cat:"食品",photo:"11",where:["ryuBo","rycom","parco","oroku"],priority:2,brand:"フェルム ラ・テール美瑛",query:"バターチーズサンド プチ ダブルクリーム",official:"https://jalplaza-airport.jalux.com/product/detail/9200907242119/",note:"原圖標示北海道食材、那霸機場國內線2樓；不是沖繩限定商品",status:"confirmed"},
+ {id:"p11",name:"FERME LA TERRE 美瑛奶油起司夾心餅 Petit",jp:"バターチーズサンド プチ〈ダブルクリーム〉",cat:"食品",photo:"11、11/10補充照5（同款）",where:["ryuBo","rycom","parco","oroku"],priority:2,brand:"フェルム ラ・テール美瑛",query:"バターチーズサンド プチ ダブルクリーム",official:"https://jalplaza-airport.jalux.com/product/detail/9200907242119/",note:"11/10 補充照片與既有項目同款，不重複新增。北海道伴手禮；連結目前列新千歲機場販售，沖繩各商場或那霸機場有無供貨請現場確認。",status:"confirmed"},
  {id:"p12",name:"MUHI 麵包超人止癢貼片 A1 76枚",jp:"ムヒパッチA1 76枚 アンパンマン",cat:"藥妝",photo:"12",where:["rycom","parco","kokusai","oroku"],priority:2,brand:"池田模範堂",query:"ムヒパッチA 76枚 公式",status:"confirmed"},
  {id:"p13",name:"Kracie 漢方葛根湯 30包裝",jp:"クラシエ漢方 葛根湯エキス顆粒 30包",cat:"藥妝",photo:"13",where:["rycom","parco","kokusai","oroku"],priority:2,brand:"クラシエ",query:"クラシエ 葛根湯 30包",status:"confirmed"},
  {id:"p14",name:"久光製藥 Butenalock Vα 抗黴菌乳霜 18g",jp:"ブテナロックVαクリーム 18g",cat:"藥妝",photo:"14",where:["rycom","parco","kokusai","oroku"],priority:2,brand:"久光製薬",query:"ブテナロックVαクリーム 18g",official:"https://www.hisamitsu.co.jp/healthcare/products/506.html",storeLink:"https://www.daikokudrug-taiwan.com/zh-TW/products/m84446045",status:"confirmed",note:"指定第2類醫藥品；用藥依藥師及產品說明"},
@@ -196,7 +196,13 @@ export const PRODUCTS = [
  {id:"p18",name:"沖繩島辣椒粉 14g（紅蓋罐）",jp:"沖縄 島とうがらし粉",cat:"食品",photo:"18",where:["ryuBo","rycom","parco","kokusai","oroku"],priority:2,brand:"沖繩縣產",query:"激辛 島とうがらし粉 14g",official:"https://www.ryukyufront.jp/SHOP/rfo0710.html",status:"confirmed"},
  {id:"p19",name:"宮古島雪鹽ぱりん 鹽香草夾心薄餅 10枚",jp:"雪塩ぱりん 塩バニラクリーム 10枚",cat:"食品",photo:"19",where:["ryuBo","rycom","parco","kokusai"],priority:2,brand:"宮古島の雪塩",query:"雪塩ぱりん 10枚",official:"https://miyakojima-yukishio.com/products/4529448980010",status:"confirmed"},
  {id:"p20",name:"海寶沖繩海蘊與芽海帶沖泡湯包",jp:"沖縄もずくと芽かぶのとろーりスープ",cat:"食品",photo:"20",where:["ryuBo","rycom","parco","kokusai"],priority:2,brand:"海宝",query:"沖縄もずくと芽かぶのとろーりスープ",official:"https://kaihou-okinawa.com/products/001",status:"confirmed"},
- {id:"p21",name:"石垣島辣油（手工瓶裝／紙封）",jp:"石垣島ラー油",cat:"食品",photo:"21",where:["ryuBo","rycom","parco","kokusai"],priority:2,brand:"石垣島ラー油",query:"石垣島ラー油 手作り",official:"https://penshoku.jp/?pid=148533679",status:"confirmed"}
+ {id:"p21",name:"石垣島辣油（手工瓶裝／紙封）",jp:"石垣島ラー油",cat:"食品",photo:"21",where:["ryuBo","rycom","parco","kokusai"],priority:2,brand:"石垣島ラー油",query:"石垣島ラー油 手作り",official:"https://penshoku.jp/?pid=148533679",status:"confirmed"},
+ {id:"p22",name:"Fujicco 減鹽昆布絲 27g（鹽分減少25%）",jp:"フジッコ 減塩ふじっ子 塩こんぶ 27g",cat:"食品",photo:"11/10補充照1",where:["rycom","parco","kokusai","oroku"],priority:2,brand:"フジッコ",query:"フジッコ 減塩ふじっ子 塩こんぶ 27g",official:"https://www.fujicco.co.jp/products/detail/38.html",status:"confirmed",added:"2026-11-10"},
+ {id:"p23",name:"Kurakon 北海道產鹽昆布絲 特大包 130g",jp:"くらこん 塩こんぶ 130g",cat:"食品",photo:"11/10補充照2",where:["rycom","parco","kokusai","oroku"],priority:2,brand:"くらこん",query:"くらこん 塩こんぶ 130g",official:"https://kurakon.jp/products/01/shio130.html",status:"confirmed",added:"2026-11-10"},
+ {id:"p24",name:"atrix Beauty Charge 蜜桃茶護手霜 80g",jp:"アトリックス ビューティーチャージ ピーチティーの香り 80g",cat:"美妝",photo:"11/10補充照3",where:["rycom","parco","kokusai","oroku"],priority:2,brand:"花王 atrix",query:"アトリックス ビューティーチャージ ピーチティー 80g",official:"https://www.kao-kirei.com/jp/en/item/khg/atrix/4901301272102/",status:"confirmed",added:"2026-11-10"},
+ {id:"p25",name:"LUTY Protect Gel 修護護髮凝膠 110mL",jp:"ルーティー エメ プロテクトジェル 110ml",cat:"美妝",photo:"11/10補充照4",where:["rycom","parco","kokusai"],priority:2,brand:"LUTY",query:"LUTY プロテクトジェル 110ml",official:"https://luty.co.jp/Form/Product/ProductDetail.aspx?cat=002004&pid=protectgel&shop=0&vid=protectgel110",status:"confirmed",added:"2026-11-10",note:"外部商品照為同款110mL；沖繩當地實際上架店家待確認。"},
+ {id:"p26",name:"ほりにし 沖繩限定香檬調味香料 100g",jp:"アウトドアスパイス ほりにし 沖縄限定シークヮーサー 100g",cat:"沖繩限定",photo:"11/10補充照6（左）",where:["airport","kokusai","ryuBo","parco"],priority:2,brand:"ほりにし",query:"ほりにし 沖縄限定 シークヮーサー 100g",official:"https://horinishi.jp/news/%E3%80%90%E6%96%B0%E5%95%86%E5%93%81%E3%80%91%E6%B2%96%E7%B8%84%E9%99%90%E5%AE%9A%EF%BC%81%E3%82%B7%E3%83%BC%E3%82%AF%E3%83%AE%E3%83%BC%E3%82%B5%E3%83%BC%E5%91%B3%E3%81%AE%E3%81%BB%E3%82%8A%E3%81%AB/",status:"confirmed",added:"2026-11-10",note:"品牌確認沖繩縣限定，包含那霸機場部分店鋪販售；其他地點為尋找建議，請依現場供貨。"},
+ {id:"p27",name:"花園鰻好朋友 原子筆（黃白條紋款）",jp:"ちんあなごフレンズ ボールペン（ニシキアナゴ・黄白）",cat:"雜貨",photo:"11/10補充照6（右）",where:["kokusai","ryuBo","airport"],priority:2,brand:"ちんあなごフレンズ",query:"ちんあなごフレンズ ボールペン 黄色 白 縞",storeLink:"https://shop.himeyuri.co.jp/products/detail/599",status:"confirmed",added:"2026-11-10",note:"照片指定黃白條紋款，非白底黑點款。網站顯示的來源頁同時展示兩種顏色；各商店供貨未確認。"}
 ];
 export const PHOTO_CREDITS = [
  {id:"aquarium",label:"美麗海水族館",file:"Big and small fish at Okinawa Churaumi Aquarium.jpg",source:"https://commons.wikimedia.org/wiki/File:Big_and_small_fish_at_Okinawa_Churaumi_Aquarium.jpg",credit:"Wikimedia Commons（請依來源檔頁授權）"},
