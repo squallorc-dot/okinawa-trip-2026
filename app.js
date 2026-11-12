@@ -1,5 +1,5 @@
-import {VERSION,HOTEL,FLIGHTS,LINKS,PLACES,DAYS,ROUTES,SHOPS,PRODUCTS,PHOTO_CREDITS} from "./data.js?v=20261110-13";
-import {SCENE_PHOTOS,DAY_PHOTOS,OFFICIAL_PRODUCT_PHOTOS} from "./media.js?v=20261110-13";
+import {VERSION,HOTEL,FLIGHTS,LINKS,PLACES,DAYS,ROUTES,SHOPS,PRODUCTS,PHOTO_CREDITS} from "./data.js?v=20261112-14";
+import {SCENE_PHOTOS,DAY_PHOTOS,OFFICIAL_PRODUCT_PHOTOS} from "./media.js?v=20261112-14";
 const $ = (s)=>document.querySelector(s);
 const enc = encodeURIComponent;
 const esc = s=>String(s??"").replace(/[&<>"']/g,x=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[x]));
