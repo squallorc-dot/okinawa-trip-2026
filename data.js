@@ -1,6 +1,6 @@
 // 2026 沖繩之旅｜資料底稿 2026-11-05
 // 旅行者在網頁看到的「建議／待確認」不代表已取得訂單或即時班次。
-export const VERSION = "2026.11.10-13";
+export const VERSION = "2026.11.12-14";
 export const HOTEL = {
   name:"東橫INN 沖繩那霸旭橋站前", jp:"東横INN沖縄那覇旭橋駅前",
   address:"〒900-0033 沖縄県那覇市久米2-1-20", tel:"098-951-1045",
@@ -35,6 +35,8 @@ export const PLACES = {
  beforeugo:{name:"Before U Go（行李領取）",jp:"Before U Go",query:"那覇空港 Before U Go",link:LINKS.airporter,type:"service",desc:"機場 2F 中央連接通道一帶；領取位置、時段依實際預約確認"},
  busTerminal:{name:"那霸巴士總站",jp:"那覇バスターミナル",query:"那覇バスターミナル",link:LINKS.bus,type:"bus"},
  asahibashi:{name:"旭橋站",jp:"旭橋駅",query:"ゆいレール旭橋駅",link:LINKS.yui,type:"rail"},
+ shuri:{name:"首里站",jp:"首里駅",query:"ゆいレール首里駅",link:LINKS.yui,type:"rail",desc:"第5天早上先在此下車，步行前往西來院（達磨寺）"},
+ daruma:{name:"西來院（達磨寺）",jp:"西来院（だるま寺）",query:"〒903-0813 沖縄県那覇市首里赤田町1-5-1 西来院",link:"https://www.okinawastory.jp/spot/600011670",type:"sight",desc:"從首里站步行約5～7分鐘。通常07:00–18:00免費參拜；境內有達摩、紅色鳥居與金運神社。御朱印及御守受理時間請以現場為準。"},
  bluseal:{name:"BLUE SEAL 久茂地店",jp:"ブルーシール 久茂地店",query:"ブルーシール 久茂地店 沖縄",type:"meeting",desc:"11/12 Klook 原訂集合點，仍以訂單指定照片／地圖為準"},
  kenmin:{name:"縣民廣場",jp:"県民広場",query:"沖縄県民広場",type:"meeting",desc:"11/14 Klook 原訂 07:50 集合"},
  ryuboWest:{name:"Ryubo 西町超市",jp:"リウボウストア 西町店",query:"リウボウストア 西町店",type:"shopping",desc:"抵達當晚的鄰近超市"},
@@ -118,16 +120,20 @@ export const DAYS = [
   {t:"跟團",title:"瀨長島",place:"senaga",detail:"海景、白色商店街，停留由實際團型決定。",type:"sight"},
   {t:"有體力再去",title:"壺川唐吉訶德、金秀超市",place:"tsubogawa",route:"kenmin-tsubogawa",detail:"不列為強制行程；唐吉訶德原標「3點」指翌日凌晨03:00。",type:"optional"}
  ],tip:"若 Klook 團型以 iias、Outlet、瀨長島三選一或部分停留，優先依實際行程，不為了全去而增加移動。"},
- {n:5,date:"2026-11-15",weekday:"日",title:"那霸購物・國際通",tag:"新都心到國際通，慢慢逛街",kind:"自由購物",cover:"street",events:[
-  {t:"上午",title:"單軌前往古島／歌町",place:"omoromachi",route:"hotel-omoro",detail:"原規劃古島→歌町；若古島無指定店面，可直接到歌町省體力。",type:"move"},
-  {t:"上午",title:"天久琉貿樂市",place:"ameku",detail:"RYUBO FOOD MARKET、大創、無印良品、SPORTS DEPO；附近有 UNIQLO／GU。",type:"shop"},
+ {n:5,date:"2026-11-15",weekday:"日",title:"首里達磨寺・那霸購物",tag:"早晨達磨寺參拜，再逛新都心與國際通",kind:"自由購物",cover:"street",events:[
+  {t:"06:45–07:30",title:"飯店早餐、準備出發",place:"hotel",detail:"飯店早餐時段06:30–09:00；今天先去首里，再接回原本的購物路線。",type:"food"},
+  {t:"07:40–08:10",title:"旭橋站 → 首里站",place:"shuri",route:"hotel-shuri",detail:"從飯店步行至旭橋站，搭往首里／てだこ浦西方向的單軌約16～19分鐘，成人參考車資¥320；以週日班次為準。",type:"move"},
+  {t:"08:10–08:20",title:"首里站步行至西來院",place:"daruma",route:"shuri-daruma",detail:"首里站步行約5～7分鐘，留些找路時間。目的地是西來院（達磨寺），不是首里城。",type:"move"},
+  {t:"08:20–09:00",title:"西來院（達磨寺）參拜・紅鳥居拍照",place:"daruma",detail:"達摩祈願、紅色鳥居、境內金運神社；通常07:00–18:00免費參拜。御守／御朱印的受理時間以現場為準。",type:"sight"},
+  {t:"09:00–09:35",title:"首里站 → 歌町站，接回原購物行程",place:"omoromachi",route:"shuri-omoro",detail:"步行回首里站，搭往那霸機場方向至歌町站；前往天久琉貿樂市尚需步行或短程計程車。",type:"move"},
+  {t:"10:00前後",title:"天久琉貿樂市",place:"ameku",detail:"保留原本購物內容：RYUBO FOOD MARKET、大創、無印良品、SPORTS DEPO；附近有 UNIQLO／GU。",type:"shop"},
   {t:"中午前後",title:"San-A Naha Main Place",place:"mainPlace",detail:"3COINS、無印良品、大創、ABC-MART 等。",type:"shop"},
   {t:"順路才去",title:"Co-op Apple Town",place:"appleTown",detail:"主要想看 Can★Do，視腳力選擇。",type:"optional"},
   {t:"下午",title:"牧志站開始逛國際通",place:"makishi",route:"omoro-makishi",detail:"從牧志站往縣政府前方向慢慢逛；全長約1.6公里，途中可分段休息。",type:"move"},
   {t:"下午",title:"國際通・牧志公設市場",place:"kokusai",detail:"唐吉訶德、第一牧志公設市場、美麗海水族館直營店、沖繩文化屋、首里石鹼等。",type:"shop"},
   {t:"支線",title:"MaxValu 牧志店／D-naha",place:"dnaha",detail:"保留超市、藥妝、駿河屋、淳久堂、DAISO；需轉向美榮橋，為可選支線。",type:"optional"},
   {t:"傍晚",title:"首里石鹼與琉貿百貨",place:"ryuBo",detail:"從國際通回到縣政府前，再依體力逛百貨與晚餐。",type:"shop"}
- ],tip:"這天店很多，但不強求全部進店；原列商店、樓層資訊仍保留在對應商場。"},
+ ],tip:"早上新增首里站旁的西來院（達磨寺），其餘天久琉貿樂市、Naha Main Place、國際通等購物點全部保留；首里城不另外列為必去，避免壓縮逛街時間。"},
  {n:6,date:"2026-11-16",weekday:"一",title:"波上宮・最後採買・回國",tag:"行李先安排好，再輕裝購物",kind:"回程日",cover:"shrine",events:[
   {t:"09:30",title:"退房、安排行李交件",place:"hotel",route:"hotel-naminoue",detail:"若已預訂 Airporter，依約定時間交件。若未預訂成功，改採回飯店取行李方案。",type:"critical"},
   {t:"上午",title:"波上宮參拜",place:"naminoue",detail:"由飯店步行約12–20分鐘（以實際路線為準）。",type:"sight"},
@@ -149,6 +155,9 @@ export const ROUTES = [
  {id:"parco-bus",day:3,from:"parco",to:"busTerminal",mode:"bus",title:"PARCO CITY → 那霸巴士總站",short:"優先查 385 號往那霸巴士總站方向",steps:["從 PARCO CITY 出入口依站牌方向找到往那霸的車站。","選『那覇バスターミナル行』，不要搭成往 PARCO CITY 的方向。","可參考平日 19:10 與 21:00 左右發車班次，實際以當日站牌為準。","回到那霸巴士總站後步行到飯店。"],note:"來程／回程站牌不可混用。原筆記的『2號月台』是那霸巴士總站資訊，不應當作 PARCO 回程月台。",official:LINKS.bus},
  {id:"hotel-kenmin",day:4,from:"hotel",to:"kenmin",mode:"walking",title:"飯店 → 縣民廣場集合點",short:"提前出門，原訂 07:50 集合",steps:["07:50 是原訂 Klook 集合時間，實際請依已購憑證。","地圖定位沖縄県民広場，注意不是在縣廳站月台集合。","提早抵達找團旗、導遊或集合標示。"]},
  {id:"kenmin-tsubogawa",day:4,from:"kenmin",to:"tsubogawa",mode:"rail",title:"解散後 → 壺川購物區",short:"有體力才搭單軌到壺川再步行",steps:["先確定 Klook 當天解散位置與時間。","查詢最近單軌站前往壺川站，出站後步行至唐吉訶德。","如果晚間疲累或已購物很多，直接回飯店。"]},
+ {id:"hotel-shuri",day:5,from:"asahibashi",to:"shuri",mode:"rail",title:"旭橋站 → 首里站",short:"約16～19分鐘；往首里／てだこ浦西方向",steps:["飯店早餐後步行前往旭橋站。","搭往首里／てだこ浦西方向的單軌，在「首里駅」下車。","成人參考車資¥320，11/15為週日，請以假日時刻表為準。","下車後開啟西來院（だるま寺）導航。"],official:LINKS.yui},
+ {id:"shuri-daruma",day:5,from:"shuri",to:"daruma",mode:"walking",title:"首里站 → 西來院（達磨寺）",short:"步行約5～7分鐘，原路返回車站",steps:["首里站出站後，導航「西来院（だるま寺）」。","前往首里赤田町1-5-1，步行約5～7分鐘。","08:20–09:00參拜及拍攝紅色鳥居、達摩與金運神社。","通常07:00–18:00開放參拜，但授與所受理時間可能不同。"],note:"「達磨寺」是西來院的通稱；金運神社就在境內，不需另外搭車。"},
+ {id:"shuri-omoro",day:5,from:"shuri",to:"omoromachi",mode:"rail",title:"首里站 → 歌町站",short:"往那霸機場方向，接續那霸購物行程",steps:["參拜後步行返回首里站。","搭往那霸機場方向單軌，在「おもろまち駅」下車。","前往天久琉貿樂市還需步行一段，也可改搭短程計程車。","天久樂市、San-A Naha Main Place、國際通照原規劃保留。"],official:LINKS.yui},
  {id:"hotel-omoro",day:5,from:"asahibashi",to:"omoromachi",mode:"rail",title:"旭橋站 → 歌町站",short:"搭單軌往首里／てだこ浦西方向",steps:["由飯店步行到旭橋站。","搭往首里／てだこ浦西方向的列車。","原筆記有古島站，如果沒有指定商店可直接在歌町下車。","歌町站到天久樂市尚有步行距離，必要時短程計程車。"],official:LINKS.yui},
  {id:"omoro-makishi",day:5,from:"omoromachi",to:"makishi",mode:"rail",title:"歌町站 → 牧志站",short:"搭單軌往那霸機場方向，從牧志走國際通",steps:["到歌町站搭往那霸機場方向的單軌。","在牧志站下車，確認國際通方向。","沿國際通往縣政府前方向逛，可依體力中途休息。"],official:LINKS.yui},
  {id:"hotel-naminoue",day:6,from:"hotel",to:"naminoue",mode:"walking",title:"飯店 → 波上宮",short:"退房後步行參拜，先確認行李已交接",steps:["如果預訂 Airporter，按預訂規則在飯店交件。","輕裝從飯店步行至波上宮，沿 Google Maps 導航。","如果無行李配送，需在行程中安排回飯店取件。"]},
