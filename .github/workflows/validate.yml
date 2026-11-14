@@ -52,5 +52,8 @@ jobs:
           if (!data.includes('export const DAY5_PLAN_C') || !data.includes('nishimatsuya:{name:')) throw new Error('Day 5 C plan / Nishimatsuya missing');
           if (!app.includes('DAY5_PLAN_C.events') || !app.includes('C｜三間專門店') || !app.includes('hotel-bianco-c-rail')) throw new Error('Day 5 C switch / travel choices missing');
           if (!data.includes('id:"petbox-nishimatsuya-c"') || !data.includes('id:"nishimatsuya-hotel-c-taxi"')) throw new Error('C route links missing');
-          console.log('Version, tracking, A/B/C routes and offline files verified',v);
+          for (const id of ['bianco','petbox','nishimatsuya']) if (!media.includes(id+':"https://')) throw new Error('Missing shop photograph '+id);
+          if (!media.includes('p27:"https://shop.himeyuri.co.jp/html/upload/save_image/0414115626_69ddacda19fd4.jpg"')) throw new Error('Missing exact yellow-striped garden eel pen photo');
+          if (!app.includes('SCENE_PHOTO_FALLBACKS') || !app.includes('OFFICIAL_PRODUCT_PHOTO_FALLBACKS')) throw new Error('Image fallback missing');
+          console.log('Version, tracking, A/B/C routes, shop photos and offline files verified',v);
           JS
