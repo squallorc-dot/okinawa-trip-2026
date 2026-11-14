@@ -119,3 +119,19 @@
  .event.has-event-photo{grid-template-columns:125px minmax(0,1fr)}
  .event-body{padding:13px}
 }
+
+/* Day 5 selectable A/B routes: consistent with existing travel cards and colors. */
+.day5-plan-switch{margin:16px 0 19px;padding:17px;background:#fff;border:1px solid var(--border);border-radius:17px;box-shadow:var(--shadow)}
+.day5-plan-title{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:6px 12px;margin-bottom:12px}
+.day5-plan-title strong{font-size:17px;color:var(--ink)}
+.day5-plan-buttons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.day5-plan-buttons button{display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:4px;min-height:73px;padding:11px 13px;border:1px solid var(--border);border-radius:12px;background:#f8faf9;color:var(--ink)}
+.day5-plan-buttons button b{font-size:14px;line-height:1.5}
+.day5-plan-buttons button small{font-size:11px;color:var(--muted);line-height:1.4}
+.day5-plan-buttons button.selected{background:var(--seafoam);border:2px solid var(--ocean);padding:10px 12px}
+.day5-plan-buttons button.selected b{color:var(--ocean-deep)}
+.day5-plan-summary{margin:12px 0 6px;font-size:13px;line-height:1.7}
+.day5-plan-footnote{display:block;color:var(--muted);font-size:11px;line-height:1.6}
+.shop-photo-neutral{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;background:linear-gradient(145deg,#eaf5f1,#dcebe9);color:var(--ocean)}
+.shop-photo-neutral span{font-size:10px;font-weight:800;letter-spacing:.12em}
+@media(max-width:560px){.day5-plan-switch{padding:12px;margin:12px 0 15px}.day5-plan-title strong{font-size:15px}.day5-plan-buttons{grid-template-columns:1fr;gap:7px}.day5-plan-buttons button{min-height:54px;padding:9px 12px}.day5-plan-buttons button.selected{padding:8px 11px}.day5-plan-summary{font-size:12px}}
