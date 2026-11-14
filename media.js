@@ -29,7 +29,8 @@ export const SCENE_PHOTOS={
 };
 export const SCENE_PHOTO_FALLBACKS={
   bianco:"https://assets.st-note.com/production/uploads/images/39032418/picture_pc_0b5be75c730c03ab43cdea555017c74b.png",
-  petbox:"https://pimg.1px.tw/zoymain0608/1457163672-1002819157.jpg"
+  petbox:"https://pimg.1px.tw/zoymain0608/1457163672-1002819157.jpg",
+  nishimatsuya:"https://pimg.1px.tw/jillxboom/1431963302-2676500894.jpg"
 };
 
 // Day1 夜晚那霸 / Day2 古宇利大橋 / Day3 PARCO海岸購物 / Day4 知念岬 / Day5 國際通 / Day6 波上宮
