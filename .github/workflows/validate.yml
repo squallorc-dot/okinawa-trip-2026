@@ -44,5 +44,10 @@ jobs:
           const html=fs.readFileSync('index.html','utf8'),sw=fs.readFileSync('sw.js','utf8');
           if(!html.includes('data-trip-id="okinawa_2026"')||!html.includes('data-gtm-id="GTM-5MK7X2XK"'))throw new Error('GTM tracking configuration missing');
           if(!sw.includes("'./travel-tracking.js'"))throw new Error('Analytics offline file is missing');
-          console.log('Version, tracking and offline files verified',v);
+          const data=fs.readFileSync('data.js','utf8'),app=fs.readFileSync('app.js','utf8'),media=fs.readFileSync('media.js','utf8');
+          for (const id of ['p28','p29']) if(!data.includes('id:"'+id+'"')||!media.includes(id+':'))throw new Error('Missing Hikari product '+id);
+          if(!data.includes('export const DAY5_PLAN_B') || !app.includes('day5PlanSwitch') || !app.includes('data-plan='))throw new Error('Missing A/B route UI');
+          if(!app.includes('save("day5-plan"') || !app.includes('DAY5_PLAN_B.events'))throw new Error('Missing A/B route persistence');
+          if(!data.includes('bianco:{name:')||!data.includes('petbox:{name:'))throw new Error('Missing new pet shops');
+          console.log('Version, tracking, A/B routes and offline files verified',v);
           JS
