@@ -9,6 +9,14 @@
 
 網站：https://squallorc-dot.github.io/okinawa-trip-2026/
 
+## 2026/11/14 第5天 A／B 分流與水族寵物採買
+- A（預設）完整保留達磨寺、天久樂市、Naha Main Place、Apple Town、國際通、MaxValu／D-naha、首里石鹼與琉貿百貨，順路插入 BIANCO 和 PET BOX。
+- B（大型店優先）改為達磨寺→BIANCO→PET BOX→Naha Main Place（較久）→天久樂市→國際通；原來的 Apple Town、MaxValu／D-naha、琉貿百貨仍作可選。
+- 第5天時間軸新增雙按鈕選擇 A／B，行程和交通路線依方案呈現。選擇保存在當前裝置的 localStorage，分享網址可使用 `?view=schedule&day=5&plan=b`；不影響購物已買紀錄或原有其他 5 天。
+- BIANCO：沖縄県那覇市おもろまち3-5-7，水族店10:00–19:00，098-943-0003。PET BOX 那覇：同區3-5-11，10:00–19:00，098-941-1117。官方店舖：https://petbox.co.jp/shop.php
+- 必買新增 p28：Hikari パラクリア ディスク50g（JAN4971618085641），p29：Goldfish Bio-Gold+100g沉底型（Item 02512）。原有27件保留。使用外部對應商品照，絕不公開使用者購物參考照片；目前兩款尚無門市即時現貨證據。
+- `travel-tracking.js` 既有 `trip_plan_select` 事件可捕捉 `data-action="pick-plan"` 和 `data-plan`；無須另外重建 GA4 或 GTM。
+
 ## 2026/11/12 Day 5 新增首里晨間參拜
 - 11/15（日）原購物行程前新增：飯店早餐、07:40旭橋出發、08:10首里站、08:20–09:00西來院（達磨寺）、09:00–09:35往歌町、10:00前後接回天久琉貿樂市。
 - 原本 Naha Main Place、Apple Town、國際通與琉貿百貨等地點不變；首里城非本次必排行程。
