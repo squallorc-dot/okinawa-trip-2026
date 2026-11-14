@@ -21,8 +21,17 @@ export const SCENE_PHOTOS={
   kokusai:"./assets/photos/kokusai-dori-01-jpg.webp",
   makishi:"./assets/photos/kokusai-dori-01-jpg.webp",
   naminoue:"./assets/photos/naminoue-shrine-mainhall-jpg.webp",
-  omoromachi:"./assets/photos/omoromachi-jpg.webp"
+  omoromachi:"./assets/photos/omoromachi-jpg.webp",
+  // Newtown shops: real photographed locations, original external image sources, no local rehosting.
+  bianco:"https://www.osd-okinawa.com/userfiles/images/works/retai_store10-l.jpg",
+  petbox:"https://jice.homemate-research.com/pubuser1/pubuser_facility_img/3/2/3/10000000000000022323/0000003328/10000000000000022323_0000003328_3.jpg",
+  nishimatsuya:"https://img.wenkaiin.com/2017/07/1500022343-7b8ea2c62c9587754dd9286589d84d6f.jpg"
 };
+export const SCENE_PHOTO_FALLBACKS={
+  bianco:"https://assets.st-note.com/production/uploads/images/39032418/picture_pc_0b5be75c730c03ab43cdea555017c74b.png",
+  petbox:"https://pimg.1px.tw/zoymain0608/1457163672-1002819157.jpg"
+};
+
 // Day1 夜晚那霸 / Day2 古宇利大橋 / Day3 PARCO海岸購物 / Day4 知念岬 / Day5 國際通 / Day6 波上宮
 export const DAY_PHOTOS={
   1:"./assets/photos/kokusaidori-at-night-jpg.webp",
@@ -62,12 +71,22 @@ export const OFFICIAL_PRODUCT_PHOTOS={
   p24:"https://kao-h.assetsadobe3.com/is/image/content/dam/sites/kao/www-kao-kirei-com/jp/ja/item/khg/atrix/25503423/GG01.jpg",
   p25:"https://shop.r10s.jp/sundrug/cabinet/202410_4/4580723060384.jpg",
   p26:"https://horinishi.jp/wp/wp-content/uploads/2026/03/b72f5aba-c5b0-4392-b039-04918090e829-500x500.jpg",
-  p27:"https://shop.himeyuri.co.jp/html/upload/save_image/0306113129_69aa3c818360a.jpg",
+  p27:"https://shop.himeyuri.co.jp/html/upload/save_image/0414115626_69ddacda19fd4.jpg",
   // 11/14 official/retailer product pictures, not user's private reference photo
   p28:"https://baseec-img-mng.akamaized.net/images/item/origin/1ce3d5ef2df419b75f903396ef623385.png?im=Resize%2Cwidth%3D1280%2Ctype%3Dnormal&imformat=generic&q=90",
   p29:"https://www.hikari.info/gold/img/go_013_04.jpg"
 };
+// When a remote merchant blocks a hot-linked image, first try another exact variant from that merchant.
+export const OFFICIAL_PRODUCT_PHOTO_FALLBACKS={
+  p27:"https://shop.himeyuri.co.jp/html/upload/save_image/0306113129_69aa3c818360a.jpg"
+};
 export const IMAGE_AUDIT=[
+ ["BIANCO店面","OKINAWA BIANCO real storefront","OSD 沖繩建設公司建築實績 | https://www.osd-okinawa.com/works/cat:%E7%89%A9%E8%B2%A9%E5%BA%97%E8%88%97/offset:20/"],
+ ["BIANCO備援","OKINAWA BIANCO aquarium interior","Fish Farm Tsubota via note | https://note.com/fishfarm_t9013/n/nf61ffd8c0727"],
+ ["PET BOX那霸店","PET BOX Animal Station Naha exterior","Homemate store page | https://www.homemate-research-pet-shop.com/dtl/10000000000000022323/"],
+ ["PET BOX備援","PET BOX Naha exterior","Okinawa visit journal | https://zoymain0608.pixnet.net/blog/posts/12193700026"],
+ ["西松屋那霸新都心店","Nishimatsuya Naha Shintoshin real storefront","雨立今旅遊實拍 | https://wenkaiin.com/blog/post/63734227"],
+ ["花園鰻黃白條紋原子筆","ちんあなごフレンズ yellow-striped ballpoint pen","琉球の館商品頁 | https://shop.himeyuri.co.jp/products/detail/599"],
  ["Day 1","Kokusaidori at night.jpg","Wikimedia Commons | Alexander Synaptic | CC BY-SA 2.0"],
  ["Day 2","Kouri Bridge 202006.jpg","Wikimedia Commons | Kugel | CC BY-SA 4.0"],
  ["Day 3","SAN-A URASOE WEST COAST PARCO CITY.jpg","Wikimedia Commons | Recom | CC0"],
