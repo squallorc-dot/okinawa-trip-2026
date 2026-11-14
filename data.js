@@ -1,6 +1,6 @@
 // 2026 沖繩之旅｜資料底稿 2026-11-05
 // 旅行者在網頁看到的「建議／待確認」不代表已取得訂單或即時班次。
-export const VERSION = "2026.11.14-16";
+export const VERSION = "2026.11.14-17";
 export const HOTEL = {
   name:"東橫INN 沖繩那霸旭橋站前", jp:"東横INN沖縄那覇旭橋駅前",
   address:"〒900-0033 沖縄県那覇市久米2-1-20", tel:"098-951-1045",
@@ -227,7 +227,7 @@ export const SHOPS = [
  {id:"outlet",day:4,group:"Outlet",priorities:["Outlet 品牌選購"],ref:"outlet"},
  {id:"ameku",day:5,group:"購物街區",priorities:["Ryubo Food Market","大創、無印良品","SPORTS DEPO","附近 UNIQLO、GU"],ref:"ameku"},
  {id:"bianco",day:5,group:"水族專門店",priorities:["Hikari パラクリア ディスク 50g","Goldfish Bio-Gold+100g沉底型","水族飼料與器材"],ref:"bianco"},
- {id:"nishimatsuya",day:5,group:"童裝／育兒",priorities:["嬰幼兒／童裝","育兒生活用品","兒童用品促銷"],ref:"nishimatsuya"},
+ {id:"nishimatsuya",day:5,plan:"c",group:"童裝／育兒",priorities:["嬰幼兒／童裝","育兒生活用品","兒童用品促銷"],ref:"nishimatsuya"},
  {id:"petbox",day:5,group:"大型寵物店",priorities:["貓狗飼料與零食","鳥類／鸚鵡用品詢問","小動物用品"],ref:"petbox"},
  {id:"mainPlace",day:5,group:"大型商場",priorities:["3COINS+plus","無印良品","大創、ABC-MART","卡牌店"],ref:"mainPlace"},
  {id:"appleTown",day:5,group:"購物街區",priorities:["Can★Do"],ref:"appleTown"},
