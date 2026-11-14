@@ -1,6 +1,6 @@
 // 2026 沖繩之旅｜資料底稿 2026-11-05
 // 旅行者在網頁看到的「建議／待確認」不代表已取得訂單或即時班次。
-export const VERSION = "2026.11.14-15";
+export const VERSION = "2026.11.14-16";
 export const HOTEL = {
   name:"東橫INN 沖繩那霸旭橋站前", jp:"東横INN沖縄那覇旭橋駅前",
   address:"〒900-0033 沖縄県那覇市久米2-1-20", tel:"098-951-1045",
@@ -38,6 +38,7 @@ export const PLACES = {
  shuri:{name:"首里站",jp:"首里駅",query:"ゆいレール首里駅",link:LINKS.yui,type:"rail",desc:"第5天早上先在此下車，步行前往西來院（達磨寺）"},
  bianco:{name:"OKINAWA BIANCO 水族專門店",jp:"OKINAWA BIANCO（オキナワビアンコ）",query:"〒900-0006 沖縄県那覇市おもろまち3-5-7 OKINAWA BIANCO",link:"https://petbox.co.jp/shop.php",type:"shopping",desc:"約150坪的水族專門店。魚類、魚飼料與水族用品；營業10:00–19:00，電話098-943-0003。兩款指定高夠力飼料現貨尚未確認。"},
  petbox:{name:"PET BOX 那霸店",jp:"ペットボックス 那覇店",query:"〒900-0006 沖縄県那覇市おもろまち3-5-11 PET BOX",link:"https://petbox.co.jp/shop.php",type:"shopping",desc:"BIANCO同園區的約160坪綜合寵物店。貓狗用品、小動物用品；鸚鵡用品可詢問店員。營業10:00–19:00，電話098-941-1117。"},
+ nishimatsuya:{name:"西松屋 那霸新都心店",jp:"西松屋 那覇新都心店",query:"〒900-0006 沖縄県那覇市おもろまち3丁目4-26 西松屋那覇新都心店",link:"https://www.24028.jp/tenpo/detail.php?doc=523",type:"shopping",desc:"兒童／嬰幼兒衣物與用品專門店，官方營業10:00–21:00、電話070-3112-6258。與BIANCO及PET BOX同在おもろまち3丁目。"},
  daruma:{name:"西來院（達磨寺）",jp:"西来院（だるま寺）",query:"〒903-0813 沖縄県那覇市首里赤田町1-5-1 西来院",link:"https://www.okinawastory.jp/spot/600011670",type:"sight",desc:"從首里站步行約5～7分鐘。通常07:00–18:00免費參拜；境內有達摩、紅色鳥居與金運神社。御朱印及御守受理時間請以現場為準。"},
  bluseal:{name:"BLUE SEAL 久茂地店",jp:"ブルーシール 久茂地店",query:"ブルーシール 久茂地店 沖縄",type:"meeting",desc:"11/12 Klook 原訂集合點，仍以訂單指定照片／地圖為準"},
  kenmin:{name:"縣民廣場",jp:"県民広場",query:"沖縄県民広場",type:"meeting",desc:"11/14 Klook 原訂 07:50 集合"},
@@ -169,7 +170,28 @@ export const DAY5_PLAN_B = {
   {t:"19:00後彈性",title:"首里石鹼・琉貿百貨・晚餐",place:"ryuBo",detail:"最後回縣政府前方向，琉貿百貨與晚餐依體力選擇。",type:"shop"}
  ]
 };
+// 2026/11/15 Day 5 C：從飯店出發的半日水族／寵物／西松屋採買，獨立於A/B。
+export const DAY5_PLAN_C = {
+ name:"C｜半日專門店採買",
+ tip:"C 不經過首里達磨寺；09:30飯店出發，10:00先到BIANCO，接著PET BOX及西松屋。去程計程車最省力；亦可旭橋搭單軌到歌町再步行。約13:10可返飯店或自由續逛Naha Main Place。指定兩包魚飼料無即時現貨保證。",
+ events:[
+  {t:"09:15–09:30",title:"飯店集合・準備出發",place:"hotel",detail:"東橫INN旭橋站前出發。三間購物店皆在那霸新都心；若買較多商品，建議選計程車。",type:"plan"},
+  {t:"09:30–10:00",title:"飯店 → OKINAWA BIANCO（計程車優先）",place:"bianco",route:"hotel-bianco-c-taxi",detail:"計程車約15～25分鐘（依路況），直接抵達水族店；省錢備案是步行至旭橋站搭單軌到歌町，再步行約15～20分鐘。",type:"move"},
+  {t:"10:00–11:00",title:"OKINAWA BIANCO｜兩款高夠力與水族用品",place:"bianco",detail:"150坪專業水族店。先拿照片找 Hikari パラクリア ディスク 50g，以及 Goldfish Bio-Gold+ 100g 沉底型；現貨未保證。",type:"shop"},
+  {t:"11:00–12:00",title:"PET BOX 那霸店｜貓狗、鸚鵡用品",place:"petbox",route:"bianco-petbox",detail:"與BIANCO相鄰，逛160坪寵物用品店。鳥類及鸚鵡用品可向店員詢問。",type:"shop"},
+  {t:"12:10–13:10",title:"西松屋 那霸新都心店｜童裝／嬰幼兒用品",place:"nishimatsuya",route:"petbox-nishimatsuya-c",detail:"步行到おもろまち3丁目4-26的西松屋；衣服、玩具及育兒日用品。官方營業至21:00。",type:"shop"},
+  {t:"13:10後（選擇一）",title:"直接返回旭橋飯店",place:"hotel",route:"nishimatsuya-hotel-c-taxi",detail:"採買完成可以直接叫計程車回飯店；若要省車資，步行回歌町站搭單軌往那霸機場方向，在旭橋站下車。",type:"optional"},
+  {t:"13:10後（選擇二）",title:"San-A Naha Main Place｜自由加逛與午餐",place:"mainPlace",route:"nishimatsuya-mainplace-c",detail:"有體力再加逛大型商場與午餐；非C方案必去。逛完自行搭計程車或歌町單軌回飯店。",type:"optional"}
+ ]
+};
 export const ROUTES = [
+ {id:"hotel-bianco-c-taxi",day:5,plan:"c",from:"hotel",to:"bianco",mode:"taxi",title:"C 去程首選｜飯店 → BIANCO 計程車",short:"從飯店直接搭車，約15～25分鐘；依交通狀況",steps:["09:30在飯店門口搭乘計程車，向司機出示OKINAWA BIANCO地址。","目的地：沖縄県那覇市おもろまち3-5-7（OKINAWA BIANCO）。","約10:00開門時抵達；請以司機導航、實際路況及跳表車資為準。"],note:"C 另有單軌＋步行的省錢選項，可在「交通」第5天查看，不必另外叫車。"},
+ {id:"hotel-bianco-c-rail",day:5,plan:"c",from:"asahibashi",to:"omoromachi",mode:"rail",title:"C 去程備選｜旭橋站 → 歌町站 單軌",short:"單軌約8～10分鐘，出站仍要步行",steps:["從東橫INN步行至ゆいレール旭橋駅。","搭往首里／てだこ浦西方向的單軌，在おもろまち駅（歌町站）下車。","出站後依步行導航到OKINAWA BIANCO，約15～20分鐘；連同候車全程宜抓35～45分鐘。","如要10:00開門抵達，單軌方式應比09:30更早離開飯店。"],official:LINKS.yui,note:"單軌班次與票價以當日官方及站內顯示為準。"},
+ {id:"omoro-bianco-c-walk",day:5,plan:"c",from:"omoromachi",to:"bianco",mode:"walking",title:"C 歌町站 → BIANCO 步行",short:"單軌下車後步行至水族店",steps:["從おもろまち駅出站，打開Google Maps步行導航至「OKINAWA BIANCO」。","地址：おもろまち3-5-7；腳程與天氣可能影響時間。","到店開門10:00後再入店。"]},
+ {id:"petbox-nishimatsuya-c",day:5,plan:"c",from:"petbox",to:"nishimatsuya",mode:"walking",title:"C PET BOX → 西松屋",short:"同屬おもろまち3丁目，步行順路購物",steps:["PET BOX在おもろまち3-5-11。","依地圖步行至西松屋那覇新都心店（おもろまち3-4-26）。","抵達後可逛嬰幼兒服飾、育兒用品，官方營業10:00–21:00。"],official:"https://www.24028.jp/tenpo/detail.php?doc=523"},
+ {id:"nishimatsuya-hotel-c-taxi",day:5,plan:"c",from:"nishimatsuya",to:"hotel",mode:"taxi",title:"C 回程首選｜西松屋 → 飯店 計程車",short:"購物完帶著商品直接返回旭橋飯店",steps:["從西松屋店外可安全上下車處叫計程車，導航返回東横INN沖縄那覇旭橋駅前。","如果東西多、同行有長輩小孩，計程車可省下搬運與轉乘。","車程和費用依當日路況及跳表為準。"]},
+ {id:"nishimatsuya-hotel-c-rail",day:5,plan:"c",from:"nishimatsuya",to:"asahibashi",mode:"rail",title:"C 回程備選｜西松屋 → 歌町 → 旭橋",short:"步行回歌町站，搭往那霸機場方向單軌",steps:["西松屋離店後步行到おもろまち駅。","搭往那霸機場方向單軌，在旭橋駅下車。","再步行回東橫INN旭橋站前；如果買很多，建議改計程車。"],official:LINKS.yui},
+ {id:"nishimatsuya-mainplace-c",day:5,plan:"c",from:"nishimatsuya",to:"mainPlace",mode:"walking",title:"C 彈性｜西松屋 → Naha Main Place",short:"不急著回飯店時，可順路加逛大型商場",steps:["西松屋購物後可直接導航到San-A Naha Main Place。","安排午餐與額外採買；這站非C方案必要行程。","後續依實際所在位置搭計程車或單軌返回飯店。"]},
  {id:"omoro-ameku",day:5,plan:"a",from:"omoromachi",to:"ameku",mode:"walking",title:"歌町站 → 天久樂市（A）",short:"先去天久，可步行或短程計程車",steps:["歌町站至天久樂市無印良品官方標示步行約18分鐘。","若需省體力可短程計程車。","天久食品超市／DAISO開放時間長，無印週日09:00起。"]},
  {id:"ameku-bianco",day:5,plan:"a",from:"ameku",to:"bianco",mode:"walking",title:"天久樂市 → BIANCO（A）",short:"順路新增大型水族店",steps:["從天久樂市定位OKINAWA BIANCO，視腳力步行或短程計程車。","BIANCO位於おもろまち3-5-7，10:00開門。","11:10前後進店，拿照片詢問兩款飼料現貨。"]},
  {id:"omoro-bianco",day:5,plan:"b",from:"omoromachi",to:"bianco",mode:"walking",title:"歌町站 → BIANCO（B）",short:"10:00開門先逛水族用品",steps:["由歌町站步行至おもろまち3-5-7。","先出示照片確認兩款Hikari魚飼料，並詢問是否有其他容量。"]},
@@ -205,6 +227,7 @@ export const SHOPS = [
  {id:"outlet",day:4,group:"Outlet",priorities:["Outlet 品牌選購"],ref:"outlet"},
  {id:"ameku",day:5,group:"購物街區",priorities:["Ryubo Food Market","大創、無印良品","SPORTS DEPO","附近 UNIQLO、GU"],ref:"ameku"},
  {id:"bianco",day:5,group:"水族專門店",priorities:["Hikari パラクリア ディスク 50g","Goldfish Bio-Gold+100g沉底型","水族飼料與器材"],ref:"bianco"},
+ {id:"nishimatsuya",day:5,group:"童裝／育兒",priorities:["嬰幼兒／童裝","育兒生活用品","兒童用品促銷"],ref:"nishimatsuya"},
  {id:"petbox",day:5,group:"大型寵物店",priorities:["貓狗飼料與零食","鳥類／鸚鵡用品詢問","小動物用品"],ref:"petbox"},
  {id:"mainPlace",day:5,group:"大型商場",priorities:["3COINS+plus","無印良品","大創、ABC-MART","卡牌店"],ref:"mainPlace"},
  {id:"appleTown",day:5,group:"購物街區",priorities:["Can★Do"],ref:"appleTown"},
