@@ -62,7 +62,10 @@ export const OFFICIAL_PRODUCT_PHOTOS={
   p24:"https://kao-h.assetsadobe3.com/is/image/content/dam/sites/kao/www-kao-kirei-com/jp/ja/item/khg/atrix/25503423/GG01.jpg",
   p25:"https://shop.r10s.jp/sundrug/cabinet/202410_4/4580723060384.jpg",
   p26:"https://horinishi.jp/wp/wp-content/uploads/2026/03/b72f5aba-c5b0-4392-b039-04918090e829-500x500.jpg",
-  p27:"https://shop.himeyuri.co.jp/html/upload/save_image/0306113129_69aa3c818360a.jpg"
+  p27:"https://shop.himeyuri.co.jp/html/upload/save_image/0306113129_69aa3c818360a.jpg",
+  // 11/14 official/retailer product pictures, not user's private reference photo
+  p28:"https://baseec-img-mng.akamaized.net/images/item/origin/1ce3d5ef2df419b75f903396ef623385.png?im=Resize%2Cwidth%3D1280%2Ctype%3Dnormal&imformat=generic&q=90",
+  p29:"https://www.hikari.info/gold/img/go_013_04.jpg"
 };
 export const IMAGE_AUDIT=[
  ["Day 1","Kokusaidori at night.jpg","Wikimedia Commons | Alexander Synaptic | CC BY-SA 2.0"],
