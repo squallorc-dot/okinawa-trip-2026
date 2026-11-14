@@ -1,6 +1,6 @@
 // 2026 沖繩之旅｜資料底稿 2026-11-05
 // 旅行者在網頁看到的「建議／待確認」不代表已取得訂單或即時班次。
-export const VERSION = "2026.11.12-14";
+export const VERSION = "2026.11.14-15";
 export const HOTEL = {
   name:"東橫INN 沖繩那霸旭橋站前", jp:"東横INN沖縄那覇旭橋駅前",
   address:"〒900-0033 沖縄県那覇市久米2-1-20", tel:"098-951-1045",
@@ -36,6 +36,8 @@ export const PLACES = {
  busTerminal:{name:"那霸巴士總站",jp:"那覇バスターミナル",query:"那覇バスターミナル",link:LINKS.bus,type:"bus"},
  asahibashi:{name:"旭橋站",jp:"旭橋駅",query:"ゆいレール旭橋駅",link:LINKS.yui,type:"rail"},
  shuri:{name:"首里站",jp:"首里駅",query:"ゆいレール首里駅",link:LINKS.yui,type:"rail",desc:"第5天早上先在此下車，步行前往西來院（達磨寺）"},
+ bianco:{name:"OKINAWA BIANCO 水族專門店",jp:"OKINAWA BIANCO（オキナワビアンコ）",query:"〒900-0006 沖縄県那覇市おもろまち3-5-7 OKINAWA BIANCO",link:"https://petbox.co.jp/shop.php",type:"shopping",desc:"約150坪的水族專門店。魚類、魚飼料與水族用品；營業10:00–19:00，電話098-943-0003。兩款指定高夠力飼料現貨尚未確認。"},
+ petbox:{name:"PET BOX 那霸店",jp:"ペットボックス 那覇店",query:"〒900-0006 沖縄県那覇市おもろまち3-5-11 PET BOX",link:"https://petbox.co.jp/shop.php",type:"shopping",desc:"BIANCO同園區的約160坪綜合寵物店。貓狗用品、小動物用品；鸚鵡用品可詢問店員。營業10:00–19:00，電話098-941-1117。"},
  daruma:{name:"西來院（達磨寺）",jp:"西来院（だるま寺）",query:"〒903-0813 沖縄県那覇市首里赤田町1-5-1 西来院",link:"https://www.okinawastory.jp/spot/600011670",type:"sight",desc:"從首里站步行約5～7分鐘。通常07:00–18:00免費參拜；境內有達摩、紅色鳥居與金運神社。御朱印及御守受理時間請以現場為準。"},
  bluseal:{name:"BLUE SEAL 久茂地店",jp:"ブルーシール 久茂地店",query:"ブルーシール 久茂地店 沖縄",type:"meeting",desc:"11/12 Klook 原訂集合點，仍以訂單指定照片／地圖為準"},
  kenmin:{name:"縣民廣場",jp:"県民広場",query:"沖縄県民広場",type:"meeting",desc:"11/14 Klook 原訂 07:50 集合"},
@@ -126,14 +128,16 @@ export const DAYS = [
   {t:"08:10–08:20",title:"首里站步行至西來院",place:"daruma",route:"shuri-daruma",detail:"首里站步行約5～7分鐘，留些找路時間。目的地是西來院（達磨寺），不是首里城。",type:"move"},
   {t:"08:20–09:00",title:"西來院（達磨寺）參拜・紅鳥居拍照",place:"daruma",detail:"達摩祈願、紅色鳥居、境內金運神社；通常07:00–18:00免費參拜。御守／御朱印的受理時間以現場為準。",type:"sight"},
   {t:"09:00–09:35",title:"首里站 → 歌町站，接回原購物行程",place:"omoromachi",route:"shuri-omoro",detail:"步行回首里站，搭往那霸機場方向至歌町站；前往天久琉貿樂市尚需步行或短程計程車。",type:"move"},
-  {t:"10:00前後",title:"天久琉貿樂市",place:"ameku",detail:"保留原本購物內容：RYUBO FOOD MARKET、大創、無印良品、SPORTS DEPO；附近有 UNIQLO／GU。",type:"shop"},
-  {t:"中午前後",title:"San-A Naha Main Place",place:"mainPlace",detail:"3COINS、無印良品、大創、ABC-MART 等。",type:"shop"},
-  {t:"順路才去",title:"Co-op Apple Town",place:"appleTown",detail:"主要想看 Can★Do，視腳力選擇。",type:"optional"},
-  {t:"下午",title:"牧志站開始逛國際通",place:"makishi",route:"omoro-makishi",detail:"從牧志站往縣政府前方向慢慢逛；全長約1.6公里，途中可分段休息。",type:"move"},
-  {t:"下午",title:"國際通・牧志公設市場",place:"kokusai",detail:"唐吉訶德、第一牧志公設市場、美麗海水族館直營店、沖繩文化屋、首里石鹼等。",type:"shop"},
-  {t:"支線",title:"MaxValu 牧志店／D-naha",place:"dnaha",detail:"保留超市、藥妝、駿河屋、淳久堂、DAISO；需轉向美榮橋，為可選支線。",type:"optional"},
-  {t:"傍晚",title:"首里石鹼與琉貿百貨",place:"ryuBo",detail:"從國際通回到縣政府前，再依體力逛百貨與晚餐。",type:"shop"}
- ],tip:"早上新增首里站旁的西來院（達磨寺），其餘天久琉貿樂市、Naha Main Place、國際通等購物點全部保留；首里城不另外列為必去，避免壓縮逛街時間。"},
+  {t:"09:45–11:00",title:"天久琉貿樂市",place:"ameku",route:"omoro-ameku",detail:"保留原本購物內容：RYUBO FOOD MARKET、大創、無印良品、SPORTS DEPO；附近有 UNIQLO／GU。",type:"shop"},
+  {t:"11:10–12:00",title:"OKINAWA BIANCO｜水族專門店",place:"bianco",route:"ameku-bianco",detail:"順路加入約150坪的水族大店，拿照片先問兩款 Hikari 指定魚飼料，再逛魚缸、水族用品。現貨未確認。",type:"shop"},
+  {t:"12:00–12:35",title:"PET BOX 那霸店｜寵物用品",place:"petbox",route:"bianco-petbox",detail:"與 BIANCO 同園區，約160坪大型寵物用品店；貓狗用品、小動物與鸚鵡用品可詢問。",type:"shop"},
+  {t:"12:50–15:25",title:"San-A Naha Main Place",place:"mainPlace",route:"petbox-mainplace",detail:"含午餐與較長的購物時間；3COINS、無印良品、大創、ABC-MART 等。",type:"shop"},
+  {t:"15:25後彈性",title:"Co-op Apple Town",place:"appleTown",detail:"主要想看 Can★Do，視腳力選擇。",type:"optional"},
+  {t:"16:00前後",title:"牧志站開始逛國際通",place:"makishi",route:"omoro-makishi",detail:"從牧志站往縣政府前方向慢慢逛；全長約1.6公里，途中可分段休息。",type:"move"},
+  {t:"16:15–18:45",title:"國際通・牧志公設市場",place:"kokusai",detail:"唐吉訶德、第一牧志公設市場、美麗海水族館直營店、沖繩文化屋、首里石鹼等。",type:"shop"},
+  {t:"傍晚可選",title:"MaxValu 牧志店／D-naha",place:"dnaha",detail:"保留超市、藥妝、駿河屋、淳久堂、DAISO；需轉向美榮橋，為可選支線。",type:"optional"},
+  {t:"18:45後",title:"首里石鹼與琉貿百貨",place:"ryuBo",detail:"從國際通回到縣政府前，再依體力逛百貨與晚餐。",type:"shop"}
+ ],tip:"早上新增首里站旁的西來院（達磨寺），其餘天久琉貿樂市、Naha Main Place、國際通等購物點全部保留；首里城不另列必去；BIANCO 與 PET BOX 順路插入。Apple Town、D-naha、MaxValu、琉貿百貨仍留在時間軸，視體力選逛。"},
  {n:6,date:"2026-11-16",weekday:"一",title:"波上宮・最後採買・回國",tag:"行李先安排好，再輕裝購物",kind:"回程日",cover:"shrine",events:[
   {t:"09:30",title:"退房、安排行李交件",place:"hotel",route:"hotel-naminoue",detail:"若已預訂 Airporter，依約定時間交件。若未預訂成功，改採回飯店取行李方案。",type:"critical"},
   {t:"上午",title:"波上宮參拜",place:"naminoue",detail:"由飯店步行約12–20分鐘（以實際路線為準）。",type:"sight"},
@@ -145,7 +149,35 @@ export const DAYS = [
   {t:"20:30",title:"JX313 那霸起飛",place:"airport",detail:"21:20 抵達台中（台灣時間）。",type:"flight"}
  ],tip:"最後一天的行李配送必須先預約；機場退稅確認需在行李託運前完成。"}
 ];
+// Day 5 另一套獨立的 B 時間軸；不覆寫 A 的 DAYS[4].events。
+export const DAY5_PLAN_B = {
+ name:"B｜大型店優先",
+ tip:"先逛大型水族與寵物店，再留較多時間給 Naha Main Place；天久樂市與國際通照樣保留。Apple Town、D-naha／MaxValu、琉貿百貨為彈性選逛。",
+ events:[
+  {t:"06:45–07:30",title:"飯店早餐、準備出發",place:"hotel",detail:"飯店早餐後前往首里站，先參拜再開始購物。",type:"food"},
+  {t:"07:40–08:10",title:"旭橋站 → 首里站",place:"shuri",route:"hotel-shuri",detail:"搭往首里／てだこ浦西方向單軌，首里站下車，時間為預估。",type:"move"},
+  {t:"08:10–09:00",title:"西來院（達磨寺）參拜",place:"daruma",route:"shuri-daruma",detail:"由首里站步行，參拜、紅色鳥居拍照後回首里站。",type:"sight"},
+  {t:"09:00–09:45",title:"首里站 → 歌町站 → 水族店",place:"omoromachi",route:"shuri-omoro",detail:"單軌回歌町，步行前往 BIANCO，10:00開門。",type:"move"},
+  {t:"10:00–11:05",title:"OKINAWA BIANCO｜先找兩款高夠力",place:"bianco",route:"omoro-bianco",detail:"大型水族專門店，先問 パラクリア ディスク50g 和 Goldfish Bio-Gold+100g沉底型，再看其他水族用品。",type:"shop"},
+  {t:"11:05–11:55",title:"PET BOX 那霸店｜貓狗與鸚鵡用品",place:"petbox",route:"bianco-petbox",detail:"與 BIANCO 相鄰；可留較多時間逛寵物用品，鳥類飼料／用品需問店員。",type:"shop"},
+  {t:"12:10–15:00",title:"San-A Naha Main Place｜午餐＋大逛",place:"mainPlace",route:"petbox-mainplace",detail:"留約3小時給大型綜合商場、食品超市、服飾、美妝、生活雜貨與午餐。",type:"shop"},
+  {t:"時間允許再去",title:"Co-op Apple Town",place:"appleTown",detail:"原本 Can★Do 地點保留，若大店逛得久可跳過。",type:"optional"},
+  {t:"15:15–16:30",title:"天久琉貿樂市",place:"ameku",route:"mainplace-ameku",detail:"原本的食品超市、DAISO、無印良品、運動用品店仍保留；購物多時可短程計程車移動。",type:"shop"},
+  {t:"16:45前後",title:"前往牧志站・國際通",place:"makishi",route:"ameku-makishi",detail:"從天久樂市可直接搭計程車到牧志，或回歌町搭單軌。",type:"move"},
+  {t:"17:00–19:00",title:"國際通・牧志公設市場",place:"kokusai",detail:"原本的唐吉訶德、牧志公設市場、首里石鹼、沖繩文化屋和伴手禮保留。",type:"shop"},
+  {t:"有時間的支線",title:"MaxValu 牧志店／D-naha",place:"dnaha",detail:"原本超市、藥妝、駿河屋、淳久堂及 DAISO 保留為可選。",type:"optional"},
+  {t:"19:00後彈性",title:"首里石鹼・琉貿百貨・晚餐",place:"ryuBo",detail:"最後回縣政府前方向，琉貿百貨與晚餐依體力選擇。",type:"shop"}
+ ]
+};
 export const ROUTES = [
+ {id:"omoro-ameku",day:5,plan:"a",from:"omoromachi",to:"ameku",mode:"walking",title:"歌町站 → 天久樂市（A）",short:"先去天久，可步行或短程計程車",steps:["歌町站至天久樂市無印良品官方標示步行約18分鐘。","若需省體力可短程計程車。","天久食品超市／DAISO開放時間長，無印週日09:00起。"]},
+ {id:"ameku-bianco",day:5,plan:"a",from:"ameku",to:"bianco",mode:"walking",title:"天久樂市 → BIANCO（A）",short:"順路新增大型水族店",steps:["從天久樂市定位OKINAWA BIANCO，視腳力步行或短程計程車。","BIANCO位於おもろまち3-5-7，10:00開門。","11:10前後進店，拿照片詢問兩款飼料現貨。"]},
+ {id:"omoro-bianco",day:5,plan:"b",from:"omoromachi",to:"bianco",mode:"walking",title:"歌町站 → BIANCO（B）",short:"10:00開門先逛水族用品",steps:["由歌町站步行至おもろまち3-5-7。","先出示照片確認兩款Hikari魚飼料，並詢問是否有其他容量。"]},
+ {id:"bianco-petbox",day:5,from:"bianco",to:"petbox",mode:"walking",title:"BIANCO → PET BOX",short:"同園區相鄰兩間大型寵物／水族店",steps:["從BIANCO走往相鄰的PET BOX那霸店（おもろまち3-5-11）。","看看貓狗飼料、零食、小動物及鳥類用品。","兩間店都公告10:00–19:00；商品現貨未確認。"]},
+ {id:"petbox-mainplace",day:5,from:"petbox",to:"mainPlace",mode:"walking",title:"PET BOX → Naha Main Place",short:"回到大型商場，可步行或短程計程車",steps:["從PET BOX定位「サンエー那覇メインプレイス」。","視手提購物袋重量選擇步行或短程計程車。","商場內安排午餐及較長購物時間。"]},
+ {id:"mainplace-ameku",day:5,plan:"b",from:"mainPlace",to:"ameku",mode:"walking",title:"Naha Main Place → 天久樂市（B）",short:"大型店逛完再去天久",steps:["Main Place離開後導航天久りうぼう楽市。","視腳力步行，買得較多時建議短程計程車。","天久超市、DAISO、無印等仍按原購物清單挑選。"]},
+ {id:"ameku-makishi",day:5,plan:"b",from:"ameku",to:"makishi",mode:"taxi",title:"天久樂市 → 牧志／國際通（B）",short:"直達牧志較省體力",steps:["可從天久樂市搭計程車直接前往牧志／國際通入口。","若搭單軌，需先返回歌町站，再乘往那霸機場方向到牧志。"]},
+
  {id:"airport-hotel",day:1,from:"airport",to:"hotel",mode:"taxi",title:"機場 → 飯店",short:"機場計程車直達，不必拖行李轉乘",steps:["那霸機場入境、領取行李後依標示前往計程車乘車區。","出示飯店日文地址或手機畫面給司機。","抵達東横INN沖縄那覇旭橋駅前，先辦理入住。"],note:"原筆記的『1樓8號』尚未由機場官方核實，現場以計程車乘車標示為準。"},
  {id:"hotel-bluseal",day:2,from:"hotel",to:"bluseal",mode:"walking",title:"飯店 → BLUE SEAL 久茂地集合點",short:"提前步行到集合地點，集合前先定位",steps:["用地圖確認實際 Klook 訂單中的 BLUE SEAL 久茂地店定位。","預留步行與找團旗時間，08:20 前到達。","出示 Klook 憑證並確認導遊／車輛。"],note:"同品牌可能有不同分店，請以已購訂單的集合點位置為準。"},
  {id:"bluseal-ryubo",day:2,from:"bluseal",to:"ryuBo",mode:"walking",title:"解散地點 → 琉貿百貨",short:"解散後看現場位置決定步行或單軌",steps:["先確認導遊實際解散位置，與早上集合點不一定相同。","打開 Google Maps 導航琉貿百貨。","若晚間較累，直接回飯店休息。"]},
@@ -158,7 +190,7 @@ export const ROUTES = [
  {id:"hotel-shuri",day:5,from:"asahibashi",to:"shuri",mode:"rail",title:"旭橋站 → 首里站",short:"約16～19分鐘；往首里／てだこ浦西方向",steps:["飯店早餐後步行前往旭橋站。","搭往首里／てだこ浦西方向的單軌，在「首里駅」下車。","成人參考車資¥320，11/15為週日，請以假日時刻表為準。","下車後開啟西來院（だるま寺）導航。"],official:LINKS.yui},
  {id:"shuri-daruma",day:5,from:"shuri",to:"daruma",mode:"walking",title:"首里站 → 西來院（達磨寺）",short:"步行約5～7分鐘，原路返回車站",steps:["首里站出站後，導航「西来院（だるま寺）」。","前往首里赤田町1-5-1，步行約5～7分鐘。","08:20–09:00參拜及拍攝紅色鳥居、達摩與金運神社。","通常07:00–18:00開放參拜，但授與所受理時間可能不同。"],note:"「達磨寺」是西來院的通稱；金運神社就在境內，不需另外搭車。"},
  {id:"shuri-omoro",day:5,from:"shuri",to:"omoromachi",mode:"rail",title:"首里站 → 歌町站",short:"往那霸機場方向，接續那霸購物行程",steps:["參拜後步行返回首里站。","搭往那霸機場方向單軌，在「おもろまち駅」下車。","前往天久琉貿樂市還需步行一段，也可改搭短程計程車。","天久樂市、San-A Naha Main Place、國際通照原規劃保留。"],official:LINKS.yui},
- {id:"hotel-omoro",day:5,from:"asahibashi",to:"omoromachi",mode:"rail",title:"旭橋站 → 歌町站",short:"搭單軌往首里／てだこ浦西方向",steps:["由飯店步行到旭橋站。","搭往首里／てだこ浦西方向的列車。","原筆記有古島站，如果沒有指定商店可直接在歌町下車。","歌町站到天久樂市尚有步行距離，必要時短程計程車。"],official:LINKS.yui},
+ {id:"hotel-omoro",day:5,plan:"legacy",from:"asahibashi",to:"omoromachi",mode:"rail",title:"旭橋站 → 歌町站",short:"搭單軌往首里／てだこ浦西方向",steps:["由飯店步行到旭橋站。","搭往首里／てだこ浦西方向的列車。","原筆記有古島站，如果沒有指定商店可直接在歌町下車。","歌町站到天久樂市尚有步行距離，必要時短程計程車。"],official:LINKS.yui},
  {id:"omoro-makishi",day:5,from:"omoromachi",to:"makishi",mode:"rail",title:"歌町站 → 牧志站",short:"搭單軌往那霸機場方向，從牧志走國際通",steps:["到歌町站搭往那霸機場方向的單軌。","在牧志站下車，確認國際通方向。","沿國際通往縣政府前方向逛，可依體力中途休息。"],official:LINKS.yui},
  {id:"hotel-naminoue",day:6,from:"hotel",to:"naminoue",mode:"walking",title:"飯店 → 波上宮",short:"退房後步行參拜，先確認行李已交接",steps:["如果預訂 Airporter，按預訂規則在飯店交件。","輕裝從飯店步行至波上宮，沿 Google Maps 導航。","如果無行李配送，需在行程中安排回飯店取件。"]},
  {id:"naminoue-oroku",day:6,from:"naminoue",to:"oroku",mode:"rail",title:"波上宮 → 小祿 AEON",short:"步行／計程車接單軌，或直接計程車",steps:["由波上宮前往附近單軌站或搭短程計程車。","搭往那霸機場方向，在小祿站下車。","跟站內商場指示經連通道往 AEON 那霸店。"],official:LINKS.yui},
@@ -172,6 +204,8 @@ export const SHOPS = [
  {id:"iias",day:4,group:"大型商場",priorities:["AEON STYLE","大創、札幌藥妝","首里石鹼、LOFT","UNIQLO、H&M、西松屋"],ref:"iias"},
  {id:"outlet",day:4,group:"Outlet",priorities:["Outlet 品牌選購"],ref:"outlet"},
  {id:"ameku",day:5,group:"購物街區",priorities:["Ryubo Food Market","大創、無印良品","SPORTS DEPO","附近 UNIQLO、GU"],ref:"ameku"},
+ {id:"bianco",day:5,group:"水族專門店",priorities:["Hikari パラクリア ディスク 50g","Goldfish Bio-Gold+100g沉底型","水族飼料與器材"],ref:"bianco"},
+ {id:"petbox",day:5,group:"大型寵物店",priorities:["貓狗飼料與零食","鳥類／鸚鵡用品詢問","小動物用品"],ref:"petbox"},
  {id:"mainPlace",day:5,group:"大型商場",priorities:["3COINS+plus","無印良品","大創、ABC-MART","卡牌店"],ref:"mainPlace"},
  {id:"appleTown",day:5,group:"購物街區",priorities:["Can★Do"],ref:"appleTown"},
  {id:"kokusai",day:5,group:"街道",priorities:["唐吉訶德","牧志公設市場","首里石鹼","沖繩文化屋","美麗海水族館直營店"],ref:"kokusai"},
@@ -211,7 +245,9 @@ export const PRODUCTS = [
  {id:"p24",name:"atrix Beauty Charge 蜜桃茶護手霜 80g",jp:"アトリックス ビューティーチャージ ピーチティーの香り 80g",cat:"美妝",photo:"11/10補充照3",where:["rycom","parco","kokusai","oroku"],priority:2,brand:"花王 atrix",query:"アトリックス ビューティーチャージ ピーチティー 80g",official:"https://www.kao-kirei.com/jp/en/item/khg/atrix/4901301272102/",status:"confirmed",added:"2026-11-10"},
  {id:"p25",name:"LUTY Protect Gel 修護護髮凝膠 110mL",jp:"ルーティー エメ プロテクトジェル 110ml",cat:"美妝",photo:"11/10補充照4",where:["rycom","parco","kokusai"],priority:2,brand:"LUTY",query:"LUTY プロテクトジェル 110ml",official:"https://luty.co.jp/Form/Product/ProductDetail.aspx?cat=002004&pid=protectgel&shop=0&vid=protectgel110",status:"confirmed",added:"2026-11-10",note:"外部商品照為同款110mL；沖繩當地實際上架店家待確認。"},
  {id:"p26",name:"ほりにし 沖繩限定香檬調味香料 100g",jp:"アウトドアスパイス ほりにし 沖縄限定シークヮーサー 100g",cat:"沖繩限定",photo:"11/10補充照6（左）",where:["airport","kokusai","ryuBo","parco"],priority:2,brand:"ほりにし",query:"ほりにし 沖縄限定 シークヮーサー 100g",official:"https://horinishi.jp/news/%E3%80%90%E6%96%B0%E5%95%86%E5%93%81%E3%80%91%E6%B2%96%E7%B8%84%E9%99%90%E5%AE%9A%EF%BC%81%E3%82%B7%E3%83%BC%E3%82%AF%E3%83%AE%E3%83%BC%E3%82%B5%E3%83%BC%E5%91%B3%E3%81%AE%E3%81%BB%E3%82%8A%E3%81%AB/",status:"confirmed",added:"2026-11-10",note:"品牌確認沖繩縣限定，包含那霸機場部分店鋪販售；其他地點為尋找建議，請依現場供貨。"},
- {id:"p27",name:"花園鰻好朋友 原子筆（黃白條紋款）",jp:"ちんあなごフレンズ ボールペン（ニシキアナゴ・黄白）",cat:"雜貨",photo:"11/10補充照6（右）",where:["kokusai","ryuBo","airport"],priority:2,brand:"ちんあなごフレンズ",query:"ちんあなごフレンズ ボールペン 黄色 白 縞",storeLink:"https://shop.himeyuri.co.jp/products/detail/599",status:"confirmed",added:"2026-11-10",note:"照片指定黃白條紋款，非白底黑點款。網站顯示的來源頁同時展示兩種顏色；各商店供貨未確認。"}
+ {id:"p27",name:"花園鰻好朋友 原子筆（黃白條紋款）",jp:"ちんあなごフレンズ ボールペン（ニシキアナゴ・黄白）",cat:"雜貨",photo:"11/10補充照6（右）",where:["kokusai","ryuBo","airport"],priority:2,brand:"ちんあなごフレンズ",query:"ちんあなごフレンズ ボールペン 黄色 白 縞",storeLink:"https://shop.himeyuri.co.jp/products/detail/599",status:"confirmed",added:"2026-11-10",note:"照片指定黃白條紋款，非白底黑點款。網站顯示的來源頁同時展示兩種顏色；各商店供貨未確認。",}
+ {id:"p28",name:"Hikari 高夠力 パラクリア ディスク 50g",jp:"キョーリン パラクリア ディスク 50g",cat:"水族／寵物",photo:"11/14實拍（左）",where:["bianco"],priority:1,brand:"Hikari／キョーリン",query:"キョーリン パラクリア ディスク 50g JAN 4971618085641",official:"https://www.kyorin-net.co.jp/paraclear/para03.html",status:"confirmed",added:"2026-11-14",note:"指定50g／JAN 4971618085641／沉底顆粒1.3～1.5mm。優先問 BIANCO，但現貨未保證。"},
+ {id:"p29",name:"Hikari Goldfish Bio-Gold+ 100g（沉底型）",jp:"ゴールドフィッシュ バイオゴールドプラス 100g 沈下性",cat:"水族／寵物",photo:"11/14實拍（右）",where:["bianco"],priority:1,brand:"Hikari／キョーリン",query:"Hikari Goldfish Bio-Gold+ sinking 100g 02512",official:"https://www.hikari.info/gold/g_13.html",status:"confirmed",added:"2026-11-14",note:"指定100g沉底型Item No.02512，不是浮上型02502。美國通路停售，日本沖繩現貨未確認。"}
 ];
 export const PHOTO_CREDITS = [
  {id:"aquarium",label:"美麗海水族館",file:"Big and small fish at Okinawa Churaumi Aquarium.jpg",source:"https://commons.wikimedia.org/wiki/File:Big_and_small_fish_at_Okinawa_Churaumi_Aquarium.jpg",credit:"Wikimedia Commons（請依來源檔頁授權）"},
