@@ -145,3 +145,8 @@
 .day5-c-transit-actions button{justify-content:center;display:flex;align-items:center;gap:6px;text-align:center;font-weight:700}
 @media(min-width:561px) and (max-width:1050px){.day5-plan-buttons{gap:7px}.day5-plan-buttons button{padding:9px}.day5-plan-buttons button b{font-size:12px}.day5-plan-buttons button small{font-size:10px}}
 @media(max-width:560px){.day5-c-transport{padding:12px}.day5-c-transit-actions{grid-template-columns:1fr}.day5-c-transit-actions button{min-height:38px}.day5-plan-buttons button{min-height:55px}}
+
+/* Real newtown storefront photos: same crops as the established travel cards. */
+.shop-photo.image-failed{display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,#e3f1ed,#d4e8e2)}
+.shop-photo.image-failed:after{content:"店家外觀照片無法載入，請點選地圖查看";padding:16px;color:var(--ocean);font-size:11px;font-weight:700;text-align:center;line-height:1.6}
+.product-photo.image-failed:after{content:"商品照載入失敗，請開啟指定商品頁確認"}
