@@ -9,6 +9,15 @@
 
 網站：https://squallorc-dot.github.io/okinawa-trip-2026/
 
+## 2026/11/14 第5天新增 C｜飯店出發的半日水族／寵物／西松屋路線
+- 原有 A（原購物路線順路新增兩間店）與 B（達磨寺＋大型店優先）**完整保留**，新增第 3 個按鈕 C（飯店直達，約09:30至13:10半日採買），透過 `?view=schedule&day=5&plan=c` 開啟。
+- C 順序：09:30東橫INN旭橋站前出發 → 10:00 OKINAWA BIANCO → 11:00 PET BOX 那霸店 → 12:10 西松屋那霸新都心店 → 約13:10選擇回飯店或自由逛Naha Main Place。C 不經過達磨寺，不要求逛國際通。
+- 西松屋地址 `沖縄県那覇市おもろまち3丁目4-26`，營業10:00–21:00，電話070-3112-6258，來源 https://www.24028.jp/tenpo/detail.php?doc=523 （出發前／當天仍以門市公告為準）。
+- 去程可選 **計程車飯店直達 BIANCO**（估算15～25分鐘，車資依現場），或 **飯店步行→旭橋站→單軌至おもろまち站→步行至BIANCO**（單軌與候車、步行合計宜抓35～45分鐘）。若選單軌，為10:00到店建議比09:30更早出發；回程亦提供計程車及單軌說明。
+- 新增 `nishimatsuya` 導航地點、商店卡片與七段C專屬交通，C的商店摘要僅顯示三家主要店及可選Naha Main Place，A/B保留原有全部卡片。
+- 三方案切換延用 `okinawa-day5-plan` localStorage，同一支手機保留選擇；兩款Hikari魚飼料仍共用現有必買清單、狀態與GA4事件。
+- 營業資訊：PET BOX/BIANCO 官方 https://petbox.co.jp/shop2.php ；西松屋官方 https://www.24028.jp/tenpo/detail.php?doc=523 。
+
 ## 2026/11/14 第5天 A／B 分流與水族寵物採買
 - A（預設）完整保留達磨寺、天久樂市、Naha Main Place、Apple Town、國際通、MaxValu／D-naha、首里石鹼與琉貿百貨，順路插入 BIANCO 和 PET BOX。
 - B（大型店優先）改為達磨寺→BIANCO→PET BOX→Naha Main Place（較久）→天久樂市→國際通；原來的 Apple Town、MaxValu／D-naha、琉貿百貨仍作可選。
