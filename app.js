@@ -1,5 +1,5 @@
-import {VERSION,HOTEL,FLIGHTS,LINKS,PLACES,DAYS,DAY5_PLAN_B,DAY5_PLAN_C,ROUTES,SHOPS,PRODUCTS,PHOTO_CREDITS} from "./data.js?v=20261114-16";
-import {SCENE_PHOTOS,DAY_PHOTOS,OFFICIAL_PRODUCT_PHOTOS} from "./media.js?v=20261114-16";
+import {VERSION,HOTEL,FLIGHTS,LINKS,PLACES,DAYS,DAY5_PLAN_B,DAY5_PLAN_C,ROUTES,SHOPS,PRODUCTS,PHOTO_CREDITS} from "./data.js?v=20261114-17";
+import {SCENE_PHOTOS,DAY_PHOTOS,OFFICIAL_PRODUCT_PHOTOS} from "./media.js?v=20261114-17";
 const $ = (s)=>document.querySelector(s);
 const enc = encodeURIComponent;
 const esc = s=>String(s??"").replace(/[&<>"']/g,x=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[x]));
@@ -101,7 +101,7 @@ const timelineEntry=(e,day,i)=>{
   return '<article class="timeline-item"><span class="timeline-rail"><span>'+icon(symbol,17)+'</span></span><div class="event '+(photograph?'has-event-photo':'')+'">'+(photograph?'<div class="event-photo">'+photoTag(photograph,p.name,"event-image")+'<span class="photo-label">'+esc(p.name)+'</span></div>':'')+'<div class="event-body"><div class="event-top"><time>'+esc(e.t)+'</time><span class="event-kind">'+({meeting:"集合",flight:"航班",move:"移動",shop:"逛街",critical:"重要",sight:"景點",optional:"順路",food:"休息",plan:"準備"}[e.type]||"行程")+'</span></div><h3>'+esc(e.title)+'</h3><p>'+esc(e.detail)+'</p>'+(p?'<div class="event-place">'+linkPlace(e.place)+'</div>':'')+'<div class="event-actions">'+(p?actionButton("導航到這裡",directionsUrl(p,"walking"),"outline","pin"):"")+(route?'<button class="button ghost" data-route="'+route.id+'">'+icon("bus",16)+'查看這段交通</button>':'')+(p?.floors?.length?'<button class="button ghost" data-place="'+e.place+'">'+icon("bag",16)+'樓層攻略</button>':'')+'</div></div></div></article>';
 };
 const dayShopping=(day)=>{
- const items=SHOPS.filter(s=>s.day===day&&(day!==5||state.day5Plan!=="c"||["bianco","petbox","nishimatsuya","mainPlace"].includes(s.id)));if(!items.length)return "";
+ const items=SHOPS.filter(s=>s.day===day&&(!s.plan||s.plan===state.day5Plan)&&(day!==5||state.day5Plan!=="c"||["bianco","petbox","nishimatsuya","mainPlace"].includes(s.id)));if(!items.length)return "";
  return '<section class="day-shops">'+sectionTitle("SHOP & STROLL","這天可以逛的地方")+'<div class="shop-grid">'+items.map(s=>{
   const p=PLACES[s.ref];const photograph=SCENE_PHOTOS[s.ref];
   return '<article class="mini-shop">'+(photograph?'<div class="shop-photo">'+photoTag(photograph,p?.name||"沖繩商場","shop-image")+'</div>':'<div class="shop-photo shop-photo-neutral" aria-hidden="true">'+icon(s.id==="bianco"?"map":"bag",29)+'<span>'+(s.id==="bianco"?"AQUARIUM":s.id==="petbox"?"PET CARE":"SHOPPING")+'</span></div>')+'<div class="mini-shop-inner"><div><span>'+esc(s.group)+'</span><h3>'+esc(p?.name||"")+'</h3><p>'+esc(s.priorities.slice(0,3).join(" · "))+'</p></div><button data-place="'+s.ref+'">看店鋪與樓層 '+icon("arrow",15)+'</button></div></article>';
