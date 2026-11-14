@@ -49,5 +49,8 @@ jobs:
           if(!data.includes('export const DAY5_PLAN_B') || !app.includes('day5PlanSwitch') || !app.includes('data-plan='))throw new Error('Missing A/B route UI');
           if(!app.includes('save("day5-plan"') || !app.includes('DAY5_PLAN_B.events'))throw new Error('Missing A/B route persistence');
           if(!data.includes('bianco:{name:')||!data.includes('petbox:{name:'))throw new Error('Missing new pet shops');
-          console.log('Version, tracking, A/B routes and offline files verified',v);
+          if (!data.includes('export const DAY5_PLAN_C') || !data.includes('nishimatsuya:{name:')) throw new Error('Day 5 C plan / Nishimatsuya missing');
+          if (!app.includes('DAY5_PLAN_C.events') || !app.includes('C｜三間專門店') || !app.includes('hotel-bianco-c-rail')) throw new Error('Day 5 C switch / travel choices missing');
+          if (!data.includes('id:"petbox-nishimatsuya-c"') || !data.includes('id:"nishimatsuya-hotel-c-taxi"')) throw new Error('C route links missing');
+          console.log('Version, tracking, A/B/C routes and offline files verified',v);
           JS
